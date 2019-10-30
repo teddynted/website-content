@@ -1,3 +1,4 @@
+## Running NextJS app on a lambda function
 
 ```
 static async getInitialProps(props) {
