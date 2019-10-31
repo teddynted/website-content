@@ -1,5 +1,3 @@
-## Running NextJS app on a lambda function
-
 ```javascript
 static async getInitialProps(props) {
         const  { query, store, asPath } = props.ctx
