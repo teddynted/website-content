@@ -61,9 +61,6 @@ Add these commands to shell script _**command.sh**_:
 
 ```bash wrap
 rm -rf package-name.zip
-cd nodejs
-npm install
-cd ..
 zip -r package-name nodejs
 echo "Delete object from s3 ..."
 aws s3 rm s3://your-s3-bucket-name/package-name.zip
