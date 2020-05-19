@@ -1,5 +1,5 @@
-###### mkdir lambda-packages && cd lambda-packages
-###### touch s3.json
+<p>mkdir lambda-packages && cd lambda-packages</p>
+<p>touch s3.json</p>
 
 ```json
 {
@@ -8,13 +8,10 @@
 }
 ```
 
-###### mkdir nodejs && cd nodejs
-
-###### npm i axios
-
-###### cd ..
-
-###### touch command.sh
+<p>mkdir nodejs && cd nodejs</p>
+<p>npm i axios</p>
+<p>cd ..</p>
+<p>touch command.sh</p>
 
 ```javascript
 rm -rf package-name.zip
