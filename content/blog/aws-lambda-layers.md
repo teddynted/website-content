@@ -13,7 +13,7 @@
 <p>cd ..</p>
 <p>touch command.sh</p>
 
-```javascript
+```bash
 rm -rf package-name.zip
 cd nodejs
 npm install
