@@ -18,7 +18,7 @@ cd ..
 
 touch command.sh
 
-```
+```javascript
 rm -rf package-name.zip
 cd nodejs
 npm install
