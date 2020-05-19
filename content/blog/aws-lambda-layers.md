@@ -3,6 +3,8 @@ mkdir lambda-packages && cd lambda-packages
 touch s3.json
 ```
 
+Add these lines to the _s3.json_ file:
+
 ```json
 {
     "S3Bucket": "your-s3-bucket",
@@ -10,12 +12,14 @@ touch s3.json
 }
 ```
 
-```
+```bash
 mkdir nodejs && cd nodejs
 npm i axios
 cd ..
 touch command.sh
 ```
+
+Add these commands to _command.sh_ shell script file:
 
 ```bash
 rm -rf package-name.zip
