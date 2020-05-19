@@ -21,7 +21,7 @@ touch command.sh
 
 Add these commands to _command.sh_ shell script file:
 
-```bash
+```bash wrap
 rm -rf package-name.zip
 cd nodejs
 npm install
