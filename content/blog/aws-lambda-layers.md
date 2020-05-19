@@ -67,6 +67,7 @@ Add these lines to the _**s3.json**_ file:
 }
 ```
 
+<p>Create dependencies' directory</p>
 
 ```bash
 mkdir nodejs && cd nodejs
