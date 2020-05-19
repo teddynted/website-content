@@ -95,7 +95,13 @@ aws lambda publish-layer-version --layer-name "your-layer-name" --description "D
 
 
 
-Run the shell script, it will create a zipped package and upload it to an s3 bucket. The output will look like the response below:
+Run the shell script, it will create a zipped package and upload it to an s3 bucket. 
+
+```bash
+./command.sh
+```
+
+The output will look like the response below:
 
 
 ```bash
