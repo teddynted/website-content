@@ -1,5 +1,7 @@
-<p>mkdir lambda-packages && cd lambda-packages</p>
-<p>touch s3.json</p>
+```bash
+mkdir lambda-packages && cd lambda-packages
+touch s3.json
+```
 
 ```json
 {
@@ -8,10 +10,12 @@
 }
 ```
 
-<p>mkdir nodejs && cd nodejs</p>
-<p>npm i axios</p>
-<p>cd ..</p>
-<p>touch command.sh</p>
+```
+mkdir nodejs && cd nodejs
+npm i axios
+cd ..
+touch command.sh
+```
 
 ```bash
 rm -rf package-name.zip
