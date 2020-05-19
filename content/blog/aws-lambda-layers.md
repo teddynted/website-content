@@ -71,6 +71,7 @@ Add these lines to the _**s3.json**_ file:
 
 ```bash
 mkdir nodejs && cd nodejs
+npm init -y
 npm i axios
 cd ..
 touch command.sh
