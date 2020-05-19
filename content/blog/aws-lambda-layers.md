@@ -1,6 +1,6 @@
 
-mkdir lambda-packages && cd lambda-packages<br/>
-touch s3.json<br />
+mkdir lambda-packages && cd lambda-packages
+touch s3.json
 
 ```json
 {
@@ -9,7 +9,7 @@ touch s3.json<br />
 }
 ```
 
-<p>mkdir nodejs && cd nodejs</p>
-<p>npm i axios</p>
-<p>cd ..</p>
-<p>touch command.sh</p>
+mkdir nodejs && cd nodejs
+npm i axios
+cd ..
+touch command.sh
