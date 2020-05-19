@@ -1,6 +1,10 @@
 
-<p>mkdir lambda-packages && cd lambda-packages</p>
-<p>touch s3.json</p>
+<p>
+    mkdir lambda-packages && cd lambda-packages
+</p>
+<p>
+    touch s3.json
+</p>
 
 ```json
 {
