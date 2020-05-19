@@ -12,11 +12,7 @@
 brew install awscli
 ```
 
-<p>Let's Head over to the IAM to create access key</p>
-
-
-![Image of AWS IAM](https://nextjs-portfolio.s3.amazonaws.com/aws-iam-service.png)
-
+<p>Let's Head over to the <a href="https://console.aws.amazon.com/iam/home?#/users/admin?section=security_credentials" target="_blank">IAM</a> to create access key</p>
 
 <p>Configure AWS CLI by running this command:</p>
 
