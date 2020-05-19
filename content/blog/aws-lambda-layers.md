@@ -99,7 +99,7 @@ upload: ./batch-one.zip to s3://your-s3-bucket-name/package-name.zip
 Creating a layer ...
 {
     "LayerVersionArn": "arn:aws:lambda:us-east-1:account-number:layer:your-layer-name:1",
-    "Description": "Batch one of nodejs dependencies", 
+    "Description": "Description of your layer", 
     "CreatedDate": "2020-05-19T19:25:32.028+0000", 
     "LayerArn": "arn:aws:lambda:us-east-1:account-number:layer:your-layer-name", 
     "Content": {
