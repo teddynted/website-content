@@ -1,6 +1,5 @@
 
 mkdir lambda-packages && cd lambda-packages
-
 touch s3.json
 
 ```json
