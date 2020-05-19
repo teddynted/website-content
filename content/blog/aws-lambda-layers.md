@@ -98,10 +98,10 @@ Uploading to s3 ...
 upload: ./batch-one.zip to s3://your-s3-bucket-name/package-name.zip
 Creating a layer ...
 {
-    "LayerVersionArn": "arn:aws:lambda:us-east-1:account-number:layer:your-layer-name:1",
+    "LayerVersionArn": "arn:aws:lambda:us-east-1:account-id:layer:your-layer-name:1",
     "Description": "Description of your layer", 
     "CreatedDate": "2020-05-19T19:25:32.028+0000", 
-    "LayerArn": "arn:aws:lambda:us-east-1:account-number:layer:your-layer-name", 
+    "LayerArn": "arn:aws:lambda:us-east-1:account-id:layer:your-layer-name", 
     "Content": {
         "CodeSize": 37841523, 
         "CodeSha256": "6JmAdzkHvcDfmHgzEcbZz3voIlkI9ExijkLI3vsJkR8=", 
@@ -130,7 +130,7 @@ functions:
       - http: ANY /{proxy+}
       - cors: true
     layers:
-      - arn:aws:lambda:us-east-1:account-number:layer:your-layer-name:1
+      - arn:aws:lambda:us-east-1:account-id:layer:your-layer-name:1
 ```
 
 
