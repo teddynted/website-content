@@ -12,7 +12,7 @@
 brew install awscli
 ```
 
-<p>Let's Head over to the <a href="https://console.aws.amazon.com/iam/home?#/users/admin?section=security_credentials" target="_blank">IAM</a> to create access key</p>
+<p>Let's Head over to the <a href="https://console.aws.amazon.com/iam/home?#/users/admin?section=security_credentials" target="_blank">IAM</a> to create an access key, This will be required when configuring AWS CLI.</p>
 
 <p>Configure AWS CLI by running this command:</p>
 
@@ -21,6 +21,20 @@ aws configure
 ```
 
 > The AWS CLI will prompt you for four pieces of information (access key, secret access key, AWS Region, and output format - _json_)
+
+### Test!
+
+Run this command to see if you have successfully configured you AWS credentials:
+
+```bash
+aws s3 ls
+```
+
+You should see a list of buckets if you are authenticated and please create one that is going to house your zipped layer package.
+
+### Let's create our layer!
+
+<p>Change directories to your development and run the following commands:</p>
 
 ```bash
 mkdir lambda-packages && cd lambda-packages
@@ -58,3 +72,7 @@ aws s3 cp package-name.zip s3://your-s3-bucket-name/
 echo "Creating a layer ..."
 aws lambda publish-layer-version --layer-name "your-layer-name" --description "Description of your layer" --content "file://s3.json" --license-info "MIT" --compatible-runtimes "nodejs12.x"
 ```
+
+Run the shell script, it will create a zipped package and upload it to an s3 bucket:
+
+
