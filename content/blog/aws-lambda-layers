@@ -1,1 +1,7 @@
 
+mkdir lambda-packages && cd lambda-packages
+touch s3.json
+mkdir nodejs && cd nodejs
+npm i axios
+cd ..
+touch command.sh
