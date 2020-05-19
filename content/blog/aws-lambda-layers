@@ -1,6 +1,13 @@
 
 mkdir lambda-packages && cd lambda-packages
 touch s3.json
+
+```json
+if (isAwesome){
+  return true
+}
+```
+
 mkdir nodejs && cd nodejs
 npm i axios
 cd ..
