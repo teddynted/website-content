@@ -1,9 +1,37 @@
+<p>In this tutorial, I will walk you through steps to creating an AWS Lambda function layer and adding that layer to a function</p>
+
+### Prerequisites
+* AWS account
+* AWS CLI(Command Line Interface)
+* Node
+* Terminal
+
+<p>Let's start off by installing AWS CLI and configure credentials so that you are able to interact with AWS services through CLI.</p>
+
+```bash
+brew install awscli
+```
+
+<p>Let's Head over to the IAM to create access key</p>
+
+
+![Image of AWS IAM](https://nextjs-portfolio.s3.amazonaws.com/aws-iam-service.png)
+
+
+<p>Configure AWS CLI by running this command:</p>
+
+```bash
+aws configure
+```
+
+> The AWS CLI will prompt you for four pieces of information (access key, secret access key, AWS Region, and output format - _json_)
+
 ```bash
 mkdir lambda-packages && cd lambda-packages
 touch s3.json
 ```
 
-Add these lines to the _s3.json_ file:
+Add these lines to the _**s3.json**_ file:
 
 ```json
 {
@@ -19,7 +47,7 @@ cd ..
 touch command.sh
 ```
 
-Add these commands to _command.sh_ shell script file:
+Add these commands to shell script _**command.sh**_:
 
 ```bash wrap
 rm -rf package-name.zip
