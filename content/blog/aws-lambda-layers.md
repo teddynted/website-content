@@ -73,6 +73,47 @@ echo "Creating a layer ..."
 aws lambda publish-layer-version --layer-name "your-layer-name" --description "Description of your layer" --content "file://s3.json" --license-info "MIT" --compatible-runtimes "nodejs12.x"
 ```
 
-Run the shell script, it will create a zipped package and upload it to an s3 bucket:
+Run the shell script, it will create a zipped package and upload it to an s3 bucket. The output will look like the response below:
 
+```bash
+Delete object from s3 ...
+delete: s3://your-s3-bucket-name/package-name.zip
+Uploading to s3 ...
+upload: ./batch-one.zip to s3://your-s3-bucket-name/package-name.zip
+Creating a layer ...
+{
+    "LayerVersionArn": "arn:aws:lambda:us-east-1:account-number:layer:your-layer-name:1",
+    "Description": "Batch one of nodejs dependencies", 
+    "CreatedDate": "2020-05-19T19:25:32.028+0000", 
+    "LayerArn": "arn:aws:lambda:us-east-1:account-number:layer:your-layer-name", 
+    "Content": {
+        "CodeSize": 37841523, 
+        "CodeSha256": "6JmAdzkHvcDfmHgzEcbZz3voIlkI9ExijkLI3vsJkR8=", 
+        "Location": "...."
+    }, 
+    "Version": 13, 
+    "CompatibleRuntimes": [
+        "nodejs12.x"
+    ], 
+    "LicenseInfo": "MIT"
+}
+```
 
+Copy _**LayerVersionArn**_ attribute value into your yaml serverless file of the lambda function.
+
+```yaml
+functions:
+  hello:
+    package:
+      exclude:
+        - 'functions/node_modules/**'
+    handler: handler.hello
+    events:
+      - http: ANY /
+      - http: ANY /{proxy+}
+      - cors: true
+    layers:
+      - arn:aws:lambda:us-east-1:account-number:layer:your-layer-name:1
+```
+
+### That's all! Thanks for stopping by.
