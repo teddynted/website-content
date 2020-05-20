@@ -100,7 +100,7 @@ aws lambda publish-layer-version --layer-name "axios-package-layer" --descriptio
 
 
 
-Run the shell script, it will create a zipped package and upload it to an s3 bucket. 
+Run the shell script, it will create a zipped deployment package and upload it to an s3 bucket. 
 
 ```cmd
 ./command.sh
