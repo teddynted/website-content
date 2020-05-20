@@ -1,4 +1,4 @@
-<p>In this tutorial, I will walk you through steps to creating an AWS Lambda function layer and adding that layer to a function</p>
+In this tutorial, I will walk you through steps to creating an AWS Lambda function layer and adding that layer to a function
 
 
 ### Prerequisites
@@ -8,7 +8,7 @@
 * Terminal
 
 
-<p>Let's start off by installing AWS CLI and configure credentials so that you are able to interact with AWS services through CLI.</p>
+Let's start off by installing AWS CLI and configure credentials so that you are able to interact with AWS services through CLI.
 
 
 
@@ -17,10 +17,10 @@ brew install awscli
 ```
 
 
-<p>Let's Head over to the <a href="https://console.aws.amazon.com/iam/home?#/users/admin?section=security_credentials" target="_blank">IAM</a> to create an access key, This will be required when configuring AWS CLI.</p>
+Let's Head over to the <a href="https://console.aws.amazon.com/iam/home?#/users/admin?section=security_credentials" target="_blank">IAM</a> to create an access key, This will be required when configuring AWS CLI.
 
 
-<p>Configure AWS CLI by running this command:</p>
+Configure AWS CLI by running this command:
 
 
 ```bash
@@ -42,7 +42,7 @@ aws s3 ls
 ```
 
 
-You should see a list of buckets if you are authenticated and please create one that is going to house your zipped layer package.
+<p>You should see a list of buckets if you are authenticated and please create one that is going to house your zipped layer package.</p>
 
 
 ### Let's create our layer!
@@ -57,7 +57,7 @@ touch s3.json
 ```
 
 
-Add these lines to the _**s3.json**_ file:
+<p>Add these lines to the _**s3.json**_ file:</p>
 
 
 ```json
@@ -75,8 +75,7 @@ touch command.sh
 ```
 
 
-Add these commands to shell script _**command.sh**_:
-
+<p>Add these commands to shell script _**command.sh**_:</p>
 
 
 ```bash wrap
@@ -128,7 +127,7 @@ Creating a layer ...
 
 > Note that I have replaced my actual account id with a _**account-id**_ in the output above, use your AWS account ID.
 
-<p>That's all for now. In the next <a href="/working-with-aws-lambda-and-lambda-layers">tutorial</a> I will show you to configure a lambda function so that it pulls axios package from a layer.</p>
+<p>That's all for now. In the next <a href="/blog/working-with-aws-lambda-and-lambda-layers">tutorial</a> I will show you to configure a lambda function so that it pulls axios package from a layer.</p>
 
 
 
