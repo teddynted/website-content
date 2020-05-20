@@ -116,7 +116,7 @@ Creating a layer ...
     "LayerVersionArn": "arn:aws:lambda:us-east-1:account-id:layer:axios-package-layer:1", 
     "Description": "Axios dependencies", 
     "CreatedDate": "2020-05-20T11:20:35.831+0000", 
-    "LayerArn": "arn:aws:lambda:us-east-1:143255761006:layer:axios-package-layer", 
+    "LayerArn": "arn:aws:lambda:us-east-1:account-id:layer:axios-package-layer", 
     ....
     "Version": 1, 
     "CompatibleRuntimes": [
