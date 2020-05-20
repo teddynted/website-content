@@ -4,7 +4,7 @@
 ### Prerequisites
 * AWS account
 * AWS CLI(Command Line Interface)
-* Node
+* Node 12
 * Terminal
 
 
