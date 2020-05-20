@@ -19,7 +19,7 @@ brew install awscli
 ```
 
 
-Let's Head over to the <a class="markdown-link" href="https://console.aws.amazon.com/iam/home?#/users/admin?section=security_credentials" target="_blank">IAM</a> to create an access key, This will be required when configuring AWS CLI.
+<p>Head over to the <a class="markdown-link" href="https://console.aws.amazon.com/iam/home?#/users/admin?section=security_credentials" target="_blank">IAM</a> to create an access key, This will be required when configuring AWS CLI.</p>
 
 
 Configure AWS CLI by running this command:
