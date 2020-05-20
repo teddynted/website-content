@@ -1,6 +1,6 @@
 In this tutorial, I will walk you through steps to creating an AWS Lambda function layer and adding that layer to a function.
 
-> _**Layers let you keep your deployment package small, which makes development easier. You can avoid errors that can occur when you install and package dependencies with your function code**_ - AWS
+> _Layers let you keep your deployment package small, which makes development easier. You can avoid errors that can occur when you install and package dependencies with your function code_ - AWS
 
 
 ### Prerequisites
