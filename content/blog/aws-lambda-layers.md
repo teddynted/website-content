@@ -127,7 +127,7 @@ Creating a layer ...
 
 > Note that I have replaced my actual account id with a _**account-id**_ in the output above, use your AWS account ID.
 
-<p>That's all for now. In the next <a href="/blog/working-with-aws-lambda-and-lambda-layers">tutorial</a> I will show you to configure a lambda function so that it pulls axios package from a layer.</p>
+<p>That's all for now. In the next <a className="markdown-link" href="/blog/working-with-aws-lambda-and-lambda-layers">tutorial</a> I will show you to configure a lambda function so that it pulls axios package from a layer.</p>
 
 
 
