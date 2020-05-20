@@ -30,7 +30,7 @@ aws configure
 ```
 
 
-> The AWS CLI will prompt you for four pieces of information (access key, secret access key, AWS Region, and output format - _json_)
+> The AWS CLI will prompt you for four pieces of information (access key, secret access key, AWS Region, and output format)
 
 
 ### Test!
