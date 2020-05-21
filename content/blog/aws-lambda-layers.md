@@ -21,7 +21,7 @@ brew install awscli
 ```
 
 
-<p>Head over to the <a class="markdown-link" href="https://console.aws.amazon.com/iam/home?#/users/admin?section=security_credentials" target="_blank">IAM</a> to create an access key, This will be required when configuring AWS CLI.</p>
+<p class="markdown-paragraph">Head over to the <a class="markdown-link" href="https://console.aws.amazon.com/iam/home?#/users/admin?section=security_credentials" target="_blank">IAM</a> to create an access key, This will be required when configuring AWS CLI.</p>
 
 
 Configure AWS CLI by running this command:
@@ -46,13 +46,13 @@ aws s3 ls
 ```
 
 
-<p>You should see a list of buckets if you are authenticated and please create one that is going to house your zipped layer package.</p>
+<p class="markdown-paragraph">You should see a list of buckets if you are authenticated and please create one that is going to house your zipped layer package.</p>
 
 
 ### Let's create our layer!
 
 
-<p>Change directories to your development and run the following commands:</p>
+<p class="markdown-paragraph">Change directories to your development and run the following commands:</p>
 
 
 ```bash
@@ -61,7 +61,7 @@ touch s3.json
 ```
 
 
-<p>Add these lines to the _**s3.json**_ file:</p>
+<p class="markdown-paragraph">Add these lines to the _**s3.json**_ file:</p>
 
 
 ```json
@@ -71,7 +71,7 @@ touch s3.json
 }
 ```
 
-<p>Create dependencies' directory</p>
+<p class="markdown-paragraph">Create dependencies' directory</p>
 
 ```bash
 mkdir nodejs
@@ -79,7 +79,7 @@ touch command.sh
 ```
 
 
-<p>Add these commands to shell script _**command.sh**_:</p>
+<p class="markdown-paragraph">Add these commands to shell script _**command.sh**_:</p>
 
 
 ```bash wrap
@@ -97,7 +97,6 @@ aws s3 cp axios-package.zip s3://node-dependencies/
 echo "Creating a layer ..."
 aws lambda publish-layer-version --layer-name "axios-package-layer" --description "Axios dependencies" --content "file://s3.json" --license-info "MIT" --compatible-runtimes "nodejs12.x"
 ```
-
 
 
 Run the shell script, it will create a zipped deployment package and upload it to an s3 bucket. 
@@ -131,7 +130,7 @@ Creating a layer ...
 
 > Note that I have replaced my actual account id with a _**account-id**_ in the output above, use your AWS account ID.
 
-<p>That's all for now. In the next <a class="markdown-link" href="/blog/working-with-aws-lambda-and-lambda-layers">tutorial</a> I will show you to configure a lambda function so that it pulls axios package from a layer.</p>
+<p class="markdown-paragraph">That's all for now. In the next <a class="markdown-link" href="/blog/working-with-aws-lambda-and-lambda-layers">tutorial</a> I will show you to configure a lambda function so that it pulls axios package from a layer.</p>
 
 
 
