@@ -63,7 +63,7 @@ touch s3.json
 ```
 
 
-<p class="markdown-paragraph">Add these lines to the _**s3.json**_ file:</p>
+Add these lines to the _**s3.json**_ file:
 
 
 ```json
@@ -81,7 +81,7 @@ touch command.sh
 ```
 
 
-<p class="markdown-paragraph">Add these commands to shell script _**command.sh**_:</p>
+Add these commands to shell script _**command.sh**_:
 
 
 ```bash wrap
