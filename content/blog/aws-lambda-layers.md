@@ -1,3 +1,5 @@
+This is the first of a 2-part mini series of working AWS Lambda functions and Lambda layers
+
 In this tutorial, I will walk you through steps to creating an AWS Lambda function layer and adding that layer to a function.
 
 AWS Lambda layer helps you with keeping your deployment package as small as **3 MB** thus avoiding deployment package size limit of **250 MB** since your application will grow over time. So your application dependencies will be housed in layer which is separate from your lambda function, a function can use up to 5 layers at time.
