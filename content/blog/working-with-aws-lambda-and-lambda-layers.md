@@ -5,7 +5,7 @@ We are going to configure a lambda function to use a function layer we have crea
 
 ### Create a Lambda function
 
-Creates a new service based on the below command.
+Create a new service based on the below command.
 
 ```bash
 serverless create --template aws-nodejs --path aws-lambda-axios --name aws-lambda-and-lambda-layers
