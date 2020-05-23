@@ -41,7 +41,7 @@ When you run this bash script it will do the following:
 * Deploy that package to an S3 bucket
 * And lastly, a layer gets created.
 
-Define your s3 bucket and deployment package name inside _s3.json_ file:
+Define your s3 bucket and deployment package name inside `s3.json` file:
 
 ```bash
 touch s3.json
