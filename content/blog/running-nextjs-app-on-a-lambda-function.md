@@ -66,7 +66,12 @@ We will add `LayerVersionArn` value to our nextjs lambda function in the next fe
 In this section will create a lambda function that will depend on our existing lambda layer. Change directories to your development and run these commands:
 
 ```bash
-serverless create --template aws-nodejs --path nextjs-on-a-lambda-function --name nextjs-aws-lambda
+
+serverless create \
+--template aws-nodejs \
+--path nextjs-on-a-lambda-function \
+--name nextjs-aws-lambda
+
 cd nextjs-on-a-lambda-function
 mkdir pages && cd pages
 touch index.js
