@@ -28,6 +28,15 @@ cd ..
 touch command.sh
 ```
 
-Add a bash script with the following commands:
+Add these commands in a bash script:
 
 ![alt text](https://nextjs-portfolio.s3.amazonaws.com/layer-shell-script.png "AWS Lambda Layers")
+
+Define your s3 bucket and deployment package name inside _s3.json_ file:
+
+```bash
+touch s3.json
+```
+
+![alt text](https://nextjs-portfolio.s3.amazonaws.com/s3-bucket-json.png "AWS S3 bucket")
+
