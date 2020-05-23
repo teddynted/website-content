@@ -23,22 +23,23 @@ Open _handler.js_ and paste the following code:
 
 const axios = require('axios');
 
-module.exports.apiCall = async event => {
-  try {
-      const res = await axios.post('https://randomuser.me/api/', {})
-      console.log(res)
-      return {
-          statusCode: 200,
-          body: JSON.stringify(res)
-      }
-  } catch (e) {
-      console.log(e)
-      return {
-          statusCode: 400,
-          body: JSON.stringify(e)
-      }
-  }
+module.exports.apiCall = async () => {
+    try {
+        console.log('apiCall')
+        const { data } = await axios.get('https://jsonplaceholder.typicode.com/todos/1');
+        return {
+            statusCode: 200,
+            body: JSON.stringify(data)
+        }
+    } catch (e) {
+        console.log('error occured:', e);
+        return {
+            statusCode: 400,
+            body: JSON.stringify(e)
+        }
+    }
 };
+
 ```
 
 The code above makes a call to a random user api using axios package that will referenced from our functional layer created in the previous tutorial.
