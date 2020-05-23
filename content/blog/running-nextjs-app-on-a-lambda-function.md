@@ -19,7 +19,7 @@ Next.js it's a server-side rendering ReactJS framework. SSR it's a process of re
 * AWS CLI
 * AWS account
 
-I will set it off by creating a <a class="markdown-link" href="/blog/aws-lambda-layers">lambda layer</a>, run theses commands in your development folder:
+<p class="markdown-paragraph">I will set it off by creating a <a class="markdown-link" href="/blog/aws-lambda-layers">lambda layer</a>, run theses commands in your development folder:</p>
 
 ```bash
 mkdir nextjs-aws-on-lambda-layer && cd nextjs-aws-on-lambda-layer 
