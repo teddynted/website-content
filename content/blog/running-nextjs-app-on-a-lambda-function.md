@@ -127,7 +127,9 @@ pipelines:
 
 Ensure that you create a repository for this project in bitbucket and connect it to Bitbucket this project:
 
-![alt text](https://nextjs-portfolio.s3.amazonaws.com/bitbucket-repository.png "Shell script")
+![alt text](https://nextjs-portfolio.s3.amazonaws.com/new-bitbucket-repository.png "Shell script")
+
+In your working directory:
 
 ```bash
 git init
