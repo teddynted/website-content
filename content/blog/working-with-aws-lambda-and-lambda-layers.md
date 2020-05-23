@@ -25,7 +25,6 @@ const axios = require('axios');
 
 module.exports.apiCall = async () => {
     try {
-        console.log('apiCall')
         const { data } = await axios.get('https://jsonplaceholder.typicode.com/todos/1');
         return {
             statusCode: 200,
