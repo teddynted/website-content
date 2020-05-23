@@ -12,5 +12,10 @@ serverless create --template aws-nodejs --path aws-lambda-axios --name aws-lambd
 ```
 This example will generate scaffolding for a service with AWS as a provider and nodejs as runtime. The scaffolding will be generated in the current working directory.
 
+Post running the command your files should look like what's on the below image:
+
+![alt text](https://nextjs-portfolio.s3.amazonaws.com/aws-lambda-layers.jpg "AWS Lambda Layers")
+
+
 
 
