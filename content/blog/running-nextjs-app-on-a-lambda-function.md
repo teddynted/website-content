@@ -76,6 +76,51 @@ cd nextjs-on-a-lambda-function
 mkdir pages && cd pages
 touch index.js
 cd ..
+npm init -y
+npm i copy-webpack-plugin@5.0.4 serverless-apigw-binary@0.4.4 serverless-offline@4.1.4 serverless-webpack@5.3.1 webpack-node-externals@1.7.2 --save-dev
 touch binaryMimeTypes.js bitbucket-pipelines.yml webpack.config.js server.js
 ```
 
+Add content to `pages/index.js`:
+
+```javascript
+export default () => (
+    <div>Next.js on AWS lambda!</div>
+)
+```
+
+Add wildcard binary mime type suport for AWS API Gateway `binaryMimeTypes.js`:
+```javascript
+module.exports = [
+    '*/*'
+]
+```
+
+`bitbucket-pipelines.yml`:
+
+```yaml
+image: lambci/lambda:build-nodejs12.x
+
+pipelines:
+  branches:      
+     dev:
+        - step:
+           name: Deploy to TEST
+           deployment: test
+           services:
+             - docker
+           caches:
+             - node
+             - docker
+           script:
+             - export AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID
+             - export AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY
+             - git remote set-url origin ${BITBUCKET_GIT_HTTP_ORIGIN}
+             - npm i serverless -g
+             - rm -rf .next
+             - npm rebuild node-sass
+             - npm install
+             - npm run build
+             - sls deploy -v --stage dev
+             - git push
+```
