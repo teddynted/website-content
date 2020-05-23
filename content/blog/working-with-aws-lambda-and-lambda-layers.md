@@ -16,7 +16,7 @@ Post running the command your files should look like what's on the below image:
 
 ![alt text](https://nextjs-portfolio.s3.amazonaws.com/aws-lambda-layers.jpg "AWS Lambda Layers")
 
-Open _handler.js_ and paste the following code:
+Open **handler.js**, overwrite existing content and paste the following code:
 
 ```javascript
 'use strict';
