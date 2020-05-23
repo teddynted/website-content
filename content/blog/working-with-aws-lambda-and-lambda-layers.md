@@ -81,4 +81,13 @@ sls deploy
 ```
 You should see the below output if all goes well:
 
-![alt text](https://nextjs-portfolio.s3.amazonaws.com/aws-sls-deploy.png "AWS Lambda Layers")
+![alt text](https://nextjs-portfolio.s3.amazonaws.com/aws-sls-deploy-lambda.png "AWS Lambda Layers")
+
+Let's test out function, run this command:
+
+```bash
+curl https://<api-id>.execute-api.us-east-1.amazonaws.com/dev/apiCall
+```
+
+> **NB** replace _api-id_ with your aws api gateway id, show in the sls deploy output under endpoints.
+
