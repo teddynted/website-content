@@ -129,12 +129,12 @@ Ensure that you create a repository for this project in bitbucket and connect it
 
 ![alt text](https://nextjs-portfolio.s3.amazonaws.com/new-bitbucket-repository.png "Shell script")
 
-In your working directory:
+In your Bitbucket respository navigate to `repository settings > settings` and enable pipelines:
 
-```bash
-git init
-git remote add origin https://<username>@bitbucket.org/<username>/nextjs-on-a-lambda-function.git
-git push -u origin master
-```
+![alt text](https://nextjs-portfolio.s3.amazonaws.com/repository-settings.png "Shell script")
 
-> Create an `ssh` key on your local and add it to Bitbucket repository before running `git push -u origin master`
+Set repository variables by adding your AWS `ACCESS_KEY_ID` and `SECRET_ACCESS_KEY`:
+
+![alt text](https://nextjs-portfolio.s3.amazonaws.com/repository-variables-blurred.png "Shell script")
+
+
