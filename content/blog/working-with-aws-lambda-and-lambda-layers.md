@@ -91,7 +91,7 @@ curl https://<api-id>.execute-api.us-east-1.amazonaws.com/dev/apiCall
 
 > **NB** replace _api-id_ with your aws api gateway id, show in the sls deploy output under endpoints.
 
-Upon running the curl command you should get json output below:
+Upon running the curl command you should get a json output below:
 
 ```json
 {"userId":1,"id":1,"title":"delectus aut autem","completed":false}
