@@ -59,3 +59,5 @@ Output:
 
 ![alt text](https://nextjs-portfolio.s3.amazonaws.com/shell-script-output.png "Shell script")
 
+We will add `LayerVersionArn` value to our nextjs lambda function in the next few steps.
+
