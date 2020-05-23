@@ -32,6 +32,15 @@ Add these commands in a bash script:
 
 ![alt text](https://nextjs-portfolio.s3.amazonaws.com/layer-shell-script.png "AWS Lambda Layers")
 
+When you run this bash script it will do the following:
+
+* Deletes an existing deployment package.
+* Changes directory to the nodejs.
+* Install packages.
+* Create a zipped deployment package.
+* Deploy that package to an S3 bucket
+* And lastly, a layer gets created.
+
 Define your s3 bucket and deployment package name inside _s3.json_ file:
 
 ```bash
@@ -39,4 +48,14 @@ touch s3.json
 ```
 
 ![alt text](https://nextjs-portfolio.s3.amazonaws.com/s3-bucket-json.png "AWS S3 bucket")
+
+Head over to a terminal to execute our bash script:
+
+```bash
+./command.sh
+```
+
+Output:
+
+![alt text](https://nextjs-portfolio.s3.amazonaws.com/shell-script-output.png "Shell script")
 
