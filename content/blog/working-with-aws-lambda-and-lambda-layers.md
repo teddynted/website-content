@@ -43,6 +43,42 @@ module.exports.apiCall = async () => {
 
 The code above makes a call to a jsonplaceholder api using axios package that will referenced from our functional layer created in the previous tutorial.
 
+Add a layer to the our lambda function, edit **serverless.yml** by adding the content below:
 
+```yaml
+layers:
+        - arn:aws:lambda:us-east-1:<account-id>:layer:axios-package-layer:1
+```
 
+Final yaml should look like:
 
+```yaml
+service: aws-lambda-and-lambda-layers
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+
+functions:
+  apiCall:
+    handler: handler.apiCall
+    events:
+      - http:
+          path: apiCall
+          method: get
+    layers:
+        - arn:aws:lambda:us-east-1:<account-id>:layer:axios-package-layer:1
+```
+
+> **NB** replace _account-id_ with your account's id.
+
+## It's time to deploy
+
+In your working directory run sls deploy command:
+
+```bash
+sls deploy
+```
+You should see the below output if all goes well:
+
+![alt text](https://nextjs-portfolio.s3.amazonaws.com/aws-lambda-layers.jpg "AWS Lambda Layers")
