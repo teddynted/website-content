@@ -7,7 +7,7 @@ We are going to configure a lambda function to use a function layer we have crea
 
 Create a new service based on the below command.
 
-```bash
+```zsh
 serverless create --template aws-nodejs --path aws-lambda-axios --name aws-lambda-and-lambda-layers
 ```
 This example will generate scaffolding for a service with AWS as a provider and nodejs as runtime. The scaffolding will be generated in the current working directory.
