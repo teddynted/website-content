@@ -124,3 +124,15 @@ pipelines:
              - sls deploy -v --stage dev
              - git push
 ```
+
+Ensure that you create a repository for this project in bitbucket and connect it to Bitbucket this project:
+
+![alt text](https://nextjs-portfolio.s3.amazonaws.com/bitbucket-repository.png "Shell script")
+
+```bash
+git init
+git remote add origin https://<username>@bitbucket.org/<username>/nextjs-on-a-lambda-function.git
+git push -u origin master
+```
+
+> Create an `ssh` key on your local and add it to Bitbucket repository before running `git push -u origin master`
