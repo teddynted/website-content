@@ -50,7 +50,7 @@ layers:
         - arn:aws:lambda:us-east-1:<account-id>:layer:axios-package-layer:1
 ```
 
-Final yaml should look like:
+Final yaml file should look like:
 
 ```yaml
 service: aws-lambda-and-lambda-layers
