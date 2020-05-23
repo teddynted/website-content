@@ -70,6 +70,8 @@ serverless create \
 --template aws-nodejs \
 --path nextjs-on-a-lambda-function \
 --name nextjs-aws-lambda
+```
+```bash
 cd nextjs-on-a-lambda-function
 mkdir pages && cd pages
 touch index.js
