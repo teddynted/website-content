@@ -41,7 +41,7 @@ module.exports.apiCall = async () => {
 
 ```
 
-The code above makes a call to a random user api using axios package that will referenced from our functional layer created in the previous tutorial.
+The code above makes a call to a jsonplaceholder api using axios package that will referenced from our functional layer created in the previous tutorial.
 
 
 
