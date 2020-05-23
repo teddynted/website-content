@@ -61,3 +61,7 @@ Output:
 
 We will add `LayerVersionArn` value to our nextjs lambda function in the next few steps.
 
+### Next.js Lambda function
+
+
+
