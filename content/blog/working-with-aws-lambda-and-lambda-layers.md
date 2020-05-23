@@ -81,4 +81,4 @@ sls deploy
 ```
 You should see the below output if all goes well:
 
-![alt text](https://nextjs-portfolio.s3.amazonaws.com/aws-lambda-layers.jpg "AWS Lambda Layers")
+![alt text](https://nextjs-portfolio.s3.amazonaws.com/aws-sls-deploy.png "AWS Lambda Layers")
