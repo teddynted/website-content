@@ -16,6 +16,33 @@ Post running the command your files should look like what's on the below image:
 
 ![alt text](https://nextjs-portfolio.s3.amazonaws.com/aws-lambda-layers.jpg "AWS Lambda Layers")
 
+Open _handler.js_ and paste the following code:
+
+```javascript
+'use strict';
+
+const axios = require('axios');
+
+module.exports.apiCall = async event => {
+  try {
+      const res = await axios.post('https://randomuser.me/api/', {})
+      console.log(res)
+      return {
+          statusCode: 200,
+          body: JSON.stringify(res)
+      }
+  } catch (e) {
+      console.log(e)
+      return {
+          statusCode: 400,
+          body: JSON.stringify(e)
+      }
+  }
+};
+```
+
+The code above makes a call to a random user api using axios package that will referenced from our functional layer created in the previous tutorial.
+
 
 
 
