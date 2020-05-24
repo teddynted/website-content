@@ -140,8 +140,15 @@ Head over to your working directory to initiate git and connect this project:
 
 ```bash
 git init
+git checkout -b dev
 git remote add origin https://<username>@bitbucket.org/<username>/nextjs-on-a-lambda-function.git
 ```
+
+Ensure that your branching model is setup like the image below:
+
+<p align="center">
+  <img src="https://nextjs-portfolio.s3.amazonaws.com/branching-model.png" alt="Branching model">
+</p>
 
 #### Webpack
 
@@ -290,3 +297,15 @@ package:
   individually: true
 ```
 > Add an arn to a layer in our `serverless.yml` from the output we got when we deployed our Lambda layer.
+
+### Ready to deploy?
+
+I hope you didn't get bored along the way.
+
+Let's add and commit files so that we can deploy our build bundle to `AWS S3 bucket` and push the whole code to `Bitbucket` through pipelines.
+
+```bash
+git add .
+git commit -m 'commit message' .
+git push
+```
