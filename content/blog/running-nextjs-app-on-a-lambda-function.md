@@ -367,3 +367,7 @@ sls offline start
 Let's test on our `http://localhost:3000`
 
 > _This `Serverless` plugin emulates `AWS` and `API Gateway` on your local machine to speed up your development cycles. To do so, it starts an HTTP server that handles the request's lifecycle like APIG does and invokes your handlers._
+
+#### Github
+
+<p class="markdown-paragraph">This project is available on <a class="markdown-link" target="_blank" href="https://github.com/teddynted/nextjs-on-a-lambda-function">github</a> for further reference</p>
