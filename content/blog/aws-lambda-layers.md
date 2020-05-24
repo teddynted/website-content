@@ -2,7 +2,7 @@ This is the first of a 2-part mini series of working AWS Lambda functions and La
 
 In this tutorial, I will walk you through steps to creating an AWS Lambda function layer and adding that layer to a lmbda function.
 
-AWS Lambda layer helps you with keeping your deployment package as small as **3 MB** thus avoiding deployment package size limit of **250 MB** since your application will grow over time. In addition to a deployment size, it promotes reusability. 
+AWS Lambda layer helps you with keeping your deployment package as small as `3 MB` thus avoiding deployment package size limit of `250 MB` since your application will grow over time. In addition to a deployment size, it promotes reusability. 
 
 So your function dependencies will be housed in layer which is separate from your lambda function, a function can use up to 5 layers at time.
 
@@ -17,7 +17,6 @@ So your function dependencies will be housed in layer which is separate from you
 
 
 Let's start off by installing AWS CLI and configure credentials so that you are able to interact with AWS services through CLI.
-
 
 
 ```bash
@@ -36,7 +35,7 @@ aws configure
 ```
 
 
-> The AWS CLI will prompt you for four pieces of information (access key, secret access key, AWS Region, and output format)
+> _The AWS CLI will prompt you for four pieces of information (access key, secret access key, AWS Region, and output format)_
 
 
 ### Test!
@@ -82,8 +81,7 @@ mkdir nodejs
 touch command.sh
 ```
 
-
-Add these commands to shell script _**command.sh**_:
+Add these commands to shell script `command.sh`:
 
 
 ```bash wrap
@@ -132,7 +130,7 @@ Creating a layer ...
 }
 ```
 
-> Note that I have replaced my actual account id with a _**account-id**_ in the output above, use your AWS account ID.
+> _Note that I have replaced my actual account id with a `account-id` in the output above, use your AWS account ID._
 
 <p class="markdown-paragraph">That's all for now. In the next <a class="markdown-link" href="/blog/working-with-aws-lambda-and-lambda-layers">tutorial</a> I will show you to configure a lambda function so that it pulls axios package from a layer.</p>
 
