@@ -127,11 +127,15 @@ pipelines:
 
 Ensure that you create a repository for this project in bitbucket and connect it to Bitbucket this project:
 
-![alt text](https://nextjs-portfolio.s3.amazonaws.com/new-bitbucket-repository.png "Shell script")
+<p align="center">
+  <img src="https://nextjs-portfolio.s3.amazonaws.com/new-bitbucket-repository.png">
+</p>
 
 In your Bitbucket respository navigate to `repository settings > settings` and enable pipelines:
 
-![alt text](https://nextjs-portfolio.s3.amazonaws.com/repository-settings-bitbucket.png "Shell script"){: style="float:right; padding:16px"}
+<p align="center">
+  <img src="https://nextjs-portfolio.s3.amazonaws.com/repository-settings-bitbucket.png">
+</p>
 
 Set repository variables by adding your AWS `ACCESS_KEY_ID` and `SECRET_ACCESS_KEY`:
 
