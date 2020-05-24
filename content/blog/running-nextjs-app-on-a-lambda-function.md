@@ -135,6 +135,4 @@ Ensure that you create a repository for this project in bitbucket and connect it
 * Set repository variables by adding your AWS `ACCESS_KEY_ID` and `SECRET_ACCESS_KEY` in `repository settings > Repository variables`:
 * Create an ssh on your local and add it to `repository settings > access keys`:
 
-![alt text](https://nextjs-portfolio.s3.amazonaws.com/ssh-key.png "Generate ssh key")
-
 
