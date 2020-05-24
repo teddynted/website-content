@@ -136,6 +136,13 @@ Ensure that you create a repository for this project in bitbucket and connect it
 * Set repository variables by adding your AWS `ACCESS_KEY_ID` and `SECRET_ACCESS_KEY` in `repository settings > Repository variables`.
 * Create an ssh key on your local and add it to `repository settings > access keys`.
 
+Head over to your working directory to initiate git and connect this project:
+
+```bash
+git init
+git remote add origin https://<username>@bitbucket.org/<username>/nextjs-on-a-lambda-function.git
+```
+
 #### Webpack
 
 Let's add webpack functionality to bundle our lambda function.
@@ -217,8 +224,8 @@ const { app, server } = require("./server");
 const awsServerlessExpress = require("aws-serverless-express"); 
 const binaryMimeTypes = require("./binaryMimeTypes");
 
-exports.handler = (event, context, callback) => {  
-    app.prepare().then(() => {  
+module.exports.nextjs = (event, context, callback) => {  
+    app.prepare().then(() => {
         return awsServerlessExpress.proxy(
             awsServerlessExpress.createServer(server, null, binaryMimeTypes), 
             event, 
@@ -235,3 +242,51 @@ exports.handler = (event, context, callback) => {
 
 #### Serverless
 
+Edit `serverless.yml` yaml file:
+
+```yaml
+service: nextjs
+
+plugins:
+  - serverless-webpack
+  - serverless-offline
+  - serverless-apigw-binary
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+
+  environment:
+    NODE_ENV: production
+    LAMBDA: true
+    STAGE: ${self:provider.stage}
+
+functions:
+  nextjs:
+    handler: handler.nextjs
+    events:
+      - http: ANY /
+      - http: ANY /{proxy+}
+      - cors: true
+    layers:
+        - arn:aws:lambda:us-east-1:<account-id>:layer:dependencies-layer:1
+
+custom:
+  webpack:
+    webpackConfig: 'webpack.config.js'
+    keepOutputDirectory: false
+    includeModules: false
+    packager: 'npm'
+    excludeFiles:
+      - .serverless
+      - .webpack 
+      - .dynamodb
+
+  apigwBinary:
+    types: #list of mime-types
+      - '*/*'
+
+package:
+  individually: true
+```
+> Add an arn to a layer in our `serverless.yml` from the output we got when we deployed our Lambda layer.
