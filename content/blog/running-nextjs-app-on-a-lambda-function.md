@@ -355,3 +355,13 @@ Copy api end-point url from your bitbucket pipeline build and open it in your br
 <p align="center">
   <img src="https://nextjs-portfolio.s3.amazonaws.com/aws-api-endpoint.gif" alt="Branching model">
 </p>
+
+You might need to test your app on localhost before deploying it to AWS, that's where `serverless-offline` comes into play. Let's test on our localhost:
+
+```bash
+rm -rf .next
+npm run build
+sls offline start
+```
+
+> This `Serverless` plugin emulates `AWS` and `API Gateway` on your local machine to speed up your development cycles. To do so, it starts an HTTP server that handles the request's lifecycle like APIG does and invokes your handlers.
