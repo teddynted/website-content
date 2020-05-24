@@ -131,8 +131,47 @@ Ensure that you create a repository for this project in bitbucket and connect it
   <img src="https://nextjs-portfolio.s3.amazonaws.com/new-bitbucket-repository.png">
 </p>
 
-* In your Bitbucket respository navigate to `repository settings > settings` and enable pipelines:
-* Set repository variables by adding your AWS `ACCESS_KEY_ID` and `SECRET_ACCESS_KEY` in `repository settings > Repository variables`:
-* Create an ssh on your local and add it to `repository settings > access keys`:
+* In your Bitbucket respository navigate to `repository settings > settings` and enable pipelines.
+* Set repository variables by adding your AWS `ACCESS_KEY_ID` and `SECRET_ACCESS_KEY` in `repository settings > Repository variables`.
+* Create an ssh key on your local and add it to `repository settings > access keys`.
+
+##### Webpack
+
+Let's add webpack functionality to bundle our lambda function.
+
+* `copy-webpack-plugin` - Copies individual files or entire directories, which already exist, to the build directory. 
+* `webpack-node-externals` - Allows you to define externals - modules that should not be bundled, e.g node_modules
+
+```javascript
+const slsw = require("serverless-webpack");
+const nodeExternals = require("webpack-node-externals");
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+
+module.exports = {
+  entry: slsw.lib.entries,
+  target: "node",
+  // Since 'aws-sdk' is not compatible with webpack,
+  // we exclude all node dependencies
+  externals: [nodeExternals()],
+  // Run babel on all .js files and skip those in node_modules
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        loader: "babel-loader",
+        include: __dirname,
+        exclude: /node_modules/
+      }
+    ]
+  },
+  plugins: [
+    new CopyWebpackPlugin([
+      { copyPermissions: true, from: '.next/**' },
+      { copyPermissions: true, from: 'pages/**' },
+      { copyPermissions: true, from: 'package.json' }
+    ])
+  ]
+};
+```
 
 
