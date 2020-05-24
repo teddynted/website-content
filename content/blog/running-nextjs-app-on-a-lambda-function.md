@@ -345,5 +345,13 @@ git push --set-upstream origin dev
 Git push will trigger a continous deployment process:
 
 <p align="center">
-  <img src="https://nextjs-portfolio.s3.amazonaws.com/bitbucket-pipelines-output.gif" alt="Branching model">
+  <img src="https://nextjs-portfolio.s3.amazonaws.com/pipelines.gif" alt="Branching model">
+</p>
+
+Copy api end-point url from your bitbucket pipeline build and open it in your browser:
+
+> It should look something like `https://<api-gateway>.execute-api.us-east-1.amazonaws.com/dev`
+
+<p align="center">
+  <img src="https://nextjs-portfolio.s3.amazonaws.com/aws-api-endpoint.gif" alt="Branching model">
 </p>
