@@ -141,4 +141,8 @@ Set repository variables by adding your AWS `ACCESS_KEY_ID` and `SECRET_ACCESS_K
 
 ![alt text](https://nextjs-portfolio.s3.amazonaws.com/repository-variables-blurred.png "Shell script")
 
+Create an ssh on local and add it to `repository settings > access keys`:
+
+![alt text](https://nextjs-portfolio.s3.amazonaws.com/ssh-key.png "Generate ssh key")
+
 
