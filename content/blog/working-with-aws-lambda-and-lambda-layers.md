@@ -1,7 +1,7 @@
 
 We are going to configure a lambda function to use a function layer we have created in a previous tutorial.
 
-> A **functional layer** gives you an ability to share code across multiple lambda functions whereas **dependency layer** is specific to a particular lambda function.
+> A `functional layer` gives you an ability to share code across multiple lambda functions whereas `dependency layer` is specific to a particular lambda function.
 
 ### Create a Lambda function
 
@@ -16,7 +16,7 @@ Post running the command your files should look like what's on the image below:
 
 ![alt text](https://nextjs-portfolio.s3.amazonaws.com/aws-lambda-layers.jpg "AWS Lambda Layers")
 
-Open **handler.js**, overwrite existing code and paste the following:
+Open `handler.js`, overwrite existing code and paste the following:
 
 ```javascript
 'use strict';
@@ -43,7 +43,7 @@ module.exports.apiCall = async () => {
 
 The code above makes a call to a jsonplaceholder api using axios package that will be referenced from our functional layer created in a previous tutorial.
 
-Add a layer to the our lambda function, edit **serverless.yml** by adding the content below:
+Add a layer to the our lambda function, edit `serverless.yml` by adding the content below:
 
 ```yaml
 layers:
@@ -70,11 +70,11 @@ functions:
         - arn:aws:lambda:us-east-1:<account-id>:layer:axios-package-layer:1
 ```
 
-> **NB** replace _account-id_ with your account's id.
+> _`NB` replace `account-id` with your account's id._
 
 ## It's time to deploy
 
-In your working directory run _sls deploy_ command:
+In your working directory run `sls deploy` command:
 
 ```bash
 sls deploy
@@ -89,7 +89,7 @@ Let's test out function, run this command:
 curl https://<api-id>.execute-api.us-east-1.amazonaws.com/dev/apiCall
 ```
 
-> **NB** replace _api-id_ with your aws api gateway id, show in the sls deploy output under endpoints.
+> _`NB` replace `api-id` with your aws api gateway id, show in the sls deploy output under endpoints._
 
 Upon running the curl command you should get a json output below:
 
