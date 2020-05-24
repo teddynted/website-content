@@ -370,4 +370,4 @@ Let's test on our `http://localhost:3000`
 
 #### Github
 
-<p class="markdown-paragraph">This project is available on <a class="markdown-link" target="_blank" href="https://github.com/teddynted/nextjs-on-a-lambda-function">github</a> for further reference</p>
+<p class="markdown-paragraph">This project is available on <a class="markdown-link" target="_blank" href="https://github.com/teddynted/nextjs-on-a-lambda-function">github</a> for further reference.</p>
