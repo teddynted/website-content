@@ -324,6 +324,13 @@ Before comitting and deploying code changes, edit `package.json`:
     "serverless-offline": "^4.1.4",
     "serverless-webpack": "^5.3.1",
     "webpack-node-externals": "^1.7.2"
+  },
+  "dependencies": {
+    "aws-serverless-express": "^3.3.6",
+    "express": "^4.17.1",
+    "next": "^8.0.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
   }
 }
 ```
