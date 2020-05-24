@@ -245,7 +245,7 @@ exports.handler = (event, context, callback) => {
 };
 ```
 
-> `aws-serverless-express` gives us an ability to run serverless applications and REST APIs using your existing Node.js application framework, on top of AWS Lambda and Amazon API Gateway
+> _`aws-serverless-express` gives us an ability to run serverless applications and REST APIs using your existing Node.js application framework, on top of AWS Lambda and Amazon API Gateway_
 
 #### Serverless
 
@@ -296,7 +296,7 @@ custom:
 package:
   individually: true
 ```
-> Add an arn to a layer in our `serverless.yml` from the output we got when we deployed our Lambda layer.
+> _Add an arn to a layer in our `serverless.yml` from the output we got when we deployed our Lambda layer._
 
 ### Ready to deploy?
 
@@ -364,6 +364,6 @@ npm run build
 sls offline start
 ```
 
-Let's test on our `http://localhost:3000` on port `3000`
+Let's test on our `http://localhost:3000`
 
-> This `Serverless` plugin emulates `AWS` and `API Gateway` on your local machine to speed up your development cycles. To do so, it starts an HTTP server that handles the request's lifecycle like APIG does and invokes your handlers.
+> _This `Serverless` plugin emulates `AWS` and `API Gateway` on your local machine to speed up your development cycles. To do so, it starts an HTTP server that handles the request's lifecycle like APIG does and invokes your handlers._
