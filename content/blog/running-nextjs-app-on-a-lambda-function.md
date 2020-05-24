@@ -302,6 +302,32 @@ package:
 
 I hope you didn't get bored along the way.
 
+Before comitting and deploying code changes, edit `package.json`:
+
+```json
+{
+  "name": "nextjs-on-a-lambda-function",
+  "version": "1.0.0",
+  "description": "",
+  "main": "handler.js",
+  "scripts": {
+    "dev": "node server.js",
+    "build": "next build",
+    "start": "NODE_ENV=production node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "copy-webpack-plugin": "^5.0.4",
+    "serverless-apigw-binary": "^0.4.4",
+    "serverless-offline": "^4.1.4",
+    "serverless-webpack": "^5.3.1",
+    "webpack-node-externals": "^1.7.2"
+  }
+}
+```
+
 Let's add and commit files so that we can deploy our build bundle to `AWS S3 bucket` and push the whole code to `Bitbucket` through pipelines.
 
 ```bash
