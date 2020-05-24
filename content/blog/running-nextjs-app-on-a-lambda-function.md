@@ -73,6 +73,7 @@ serverless create \
 ```
 ```bash
 cd nextjs-on-a-lambda-function
+mv handler.js index.js
 mkdir pages && cd pages
 touch index.js
 cd ..
@@ -221,7 +222,7 @@ exports.app = app;
 exports.server = server;
 ```
 
-And Edit `handler.js` by adding these lines:
+And Edit `index.js` by adding these lines:
 
 ```javascript
 'use strict';
@@ -230,8 +231,8 @@ const { app, server } = require("./server");
 const awsServerlessExpress = require("aws-serverless-express"); 
 const binaryMimeTypes = require("./binaryMimeTypes");
 
-module.exports.nextjs = (event, context, callback) => {  
-    app.prepare().then(() => {
+exports.handler = (event, context, callback) => {  
+    app.prepare().then(() => { 
         return awsServerlessExpress.proxy(
             awsServerlessExpress.createServer(server, null, binaryMimeTypes), 
             event, 
@@ -268,8 +269,8 @@ provider:
     STAGE: ${self:provider.stage}
 
 functions:
-  nextjs:
-    handler: handler.nextjs
+  index:
+    handler: index.handler
     events:
       - http: ANY /
       - http: ANY /{proxy+}
@@ -308,7 +309,7 @@ Before comitting and deploying code changes, edit `package.json`:
   "name": "nextjs-on-a-lambda-function",
   "version": "1.0.0",
   "description": "",
-  "main": "handler.js",
+  "main": "index.js",
   "scripts": {
     "dev": "node server.js",
     "build": "next build",
