@@ -80,7 +80,6 @@ npm init -y
 npm i copy-webpack-plugin@5.0.4 serverless-apigw-binary@0.4.4 serverless-offline@4.1.4 serverless-webpack@5.3.1 webpack-node-externals@1.7.2 --save-dev
 touch binaryMimeTypes.js bitbucket-pipelines.yml webpack.config.js server.js
 ```
-
 Add content to `pages/index.js`:
 
 ```javascript
@@ -96,7 +95,9 @@ module.exports = [
 ]
 ```
 
-`bitbucket-pipelines.yml`:
+#### Bitbucket
+
+Add `bitbucket-pipelines.yml`:
 
 ```yaml
 image: lambci/lambda:build-nodejs12.x
@@ -135,7 +136,7 @@ Ensure that you create a repository for this project in bitbucket and connect it
 * Set repository variables by adding your AWS `ACCESS_KEY_ID` and `SECRET_ACCESS_KEY` in `repository settings > Repository variables`.
 * Create an ssh key on your local and add it to `repository settings > access keys`.
 
-##### Webpack
+#### Webpack
 
 Let's add webpack functionality to bundle our lambda function.
 
@@ -174,4 +175,63 @@ module.exports = {
 };
 ```
 
+#### Server
+
+Set up a custom express server for Next.js
+
+```javascript
+const next = require('next')
+const express = require("express");
+const { PORT, NODE_ENV, LAMBDA } = process.env;
+const dev = NODE_ENV !== 'production'
+const port = parseInt(PORT, 10) || 5000;
+const app = next({ dev })
+const handle = app.getRequestHandler()
+
+const createServer = () => {
+    const server = express();
+    server.get("*", (req, res) => handle(req, res));
+    return server;
+};
+
+const server = createServer();
+if (!LAMBDA) {
+    app.prepare().then(() => {
+        server.listen(port, err => {
+        if (err) throw err;
+            console.log(`Ready on http://localhost:${port}`);
+        });
+    });
+}
+
+exports.app = app;
+exports.server = server;
+```
+
+And Edit `handler.js` by adding these lines:
+
+```javascript
+'use strict';
+
+const { app, server } = require("./server");
+const awsServerlessExpress = require("aws-serverless-express"); 
+const binaryMimeTypes = require("./binaryMimeTypes");
+
+exports.handler = (event, context, callback) => {  
+    app.prepare().then(() => {  
+        return awsServerlessExpress.proxy(
+            awsServerlessExpress.createServer(server, null, binaryMimeTypes), 
+            event, 
+            context
+        );   
+    }).catch(ex => {
+        console.error(ex.stack)
+        process.exit(1)
+    });
+};
+```
+
+> `aws-serverless-express` gives us an ability to run serverless applications and REST APIs using your existing Node.js application framework, on top of AWS Lambda and Amazon API Gateway
+
+#### Serverless
 
