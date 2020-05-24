@@ -308,4 +308,5 @@ Let's add and commit files so that we can deploy our build bundle to `AWS S3 buc
 git add .
 git commit -m 'commit message' .
 git push
+git push --set-upstream origin dev
 ```
