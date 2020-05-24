@@ -119,7 +119,6 @@ pipelines:
              - git remote set-url origin ${BITBUCKET_GIT_HTTP_ORIGIN}
              - npm i serverless -g
              - rm -rf .next
-             - npm rebuild node-sass
              - npm install
              - npm run build
              - sls deploy -v --stage dev
@@ -340,6 +339,10 @@ Let's add and commit files so that we can deploy our build bundle to `AWS S3 buc
 ```bash
 git add .
 git commit -m 'commit message' .
-git push
 git push --set-upstream origin dev
 ```
+Git push will trigger a continous deployment process:
+
+<p align="center">
+  <img src="https://nextjs-portfolio.s3.amazonaws.com/bitbucket-pipelines-output.gif" alt="Branching model">
+</p>
