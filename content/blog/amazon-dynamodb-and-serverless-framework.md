@@ -1,1 +1,1 @@
-> _Amazon DynamoDB is a fully managed NoSQL database service offered by Amazon Web Services (AWS)_
+> _`Amazon DynamoDB` is a fully managed NoSQL database service offered by Amazon Web Services (AWS)_
