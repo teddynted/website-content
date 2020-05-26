@@ -28,3 +28,33 @@ Open `serverless.yml` and add following entry to the plugins array
 plugins:
   - serverless-dynamodb-local
 ```
+
+Install DynamoDB Local:
+
+```bash
+sls dynamodb install
+```
+
+## Configuration
+
+Let's configure `DynamoDb` and add a table called `posts`.
+
+```yaml
+custom:
+  postsTableName: 'posts-${self:provider.stage}'
+  dynamodb:
+    stages:
+      - dev
+    start:
+      migrate: true
+      port: ${env:DYNAMODB_PORT, '8000'}
+      seed: true
+      inMemory: true
+      convertEmptyValues: true
+
+    seed:
+        dev:
+          sources:
+            - table: ${self:custom.postsTableName}
+              sources: [seeds/posts.json]
+```
