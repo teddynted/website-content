@@ -18,7 +18,13 @@ For the purpose of running our on localhost, we need to install `serverless-dyna
 ```
 brew cask install java
 npm install --save-dev serverless-dynamodb-local
-sls dynamodb install
 ```
 
-> You also need to install Java Runtime version only if it's not installed. 
+> _You also need to install `Java Runtime version` only if it's not installed._
+
+Open `serverless.yml` and add following entry to the plugins array
+
+```bash
+plugins:
+  - serverless-dynamodb-local
+```
