@@ -21,4 +21,4 @@ npm install --save-dev serverless-dynamodb-local
 sls dynamodb install
 ```
 
-> You also need to install Java Runtime version only if it's not installed 
+> You also need to install Java Runtime version only if it's not installed. 
