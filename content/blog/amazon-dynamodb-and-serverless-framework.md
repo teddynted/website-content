@@ -37,7 +37,7 @@ sls dynamodb install
 
 ## Configuration
 
-Let's configure `DynamoDb` and add a table called `posts`.
+Let's configure `DynamoDb` and add a table called `posts` in `serverless.yml`:
 
 ```yaml
 custom:
