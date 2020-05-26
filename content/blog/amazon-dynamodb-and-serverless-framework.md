@@ -5,7 +5,11 @@ In this tutorial we are going to integrate AWS' DynamoDB into a Next.JS applicat
 * Serverless
 * Java Runtime Engine (JRE) version 6.x or newer
 
-<p class="markdown-paragraph">Change directories to your development directory and clone this repo: `git clone https://github.com/teddynted/nextjs-on-a-lambda-function.git`.</p>
+Change directories to your development directory and clone this repo: 
+
+```bash
+git clone https://github.com/teddynted/nextjs-on-a-lambda-function.git
+```
 
 > [`Nextjs app on a Lambda function`](https://teddykekana.com/blog/running-nextjs-app-on-a-lambda-function)
 
