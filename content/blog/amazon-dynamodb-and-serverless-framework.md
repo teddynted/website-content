@@ -39,7 +39,7 @@ sls dynamodb install
 
 Let's configure `DynamoDb` and add a table called `posts-dev` in `serverless.yml`:
 
-> table name should match your enviroment e.g posts-dev, posts-uat etc.
+> _table name should match your enviroment e.g `posts-dev`, `posts-uat` etc._
 
 ```yaml
 custom:
