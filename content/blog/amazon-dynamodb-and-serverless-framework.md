@@ -66,7 +66,7 @@ mkdir seeds && cd seeds
 touch posts.json
 ```
 
-Add this content:
+Add this content to `posts.json`:
 
 ```json
 [
