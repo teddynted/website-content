@@ -10,14 +10,15 @@ In this tutorial we are going to integrate AWS' DynamoDB into a Next.JS applicat
 ```bash
 git clone https://github.com/teddynted/nextjs-on-a-lambda-function.git
 cd nextjs-on-a-lambda-function
-npm i
+npm install
 ```
 
 For the purpose of running our on localhost, we need to install `serverless-dynamodb-local` plugin.
 
 ```
 brew cask install java
+npm install --save-dev serverless-dynamodb-local
 sls dynamodb install
 ```
 
-> You also need to install Java Runtime version
+> You also need to install Java Runtime version only if it's not installed 
