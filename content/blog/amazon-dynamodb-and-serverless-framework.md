@@ -58,3 +58,29 @@ custom:
             - table: ${self:custom.postsTableName}
               sources: [seeds/posts.json]
 ```
+
+Upon running `sls offline start` a table will be seeded with predefined json data. Add a directory called `seeds` and a `posts.json` file:
+
+```bash
+mkdir seeds && cd seeds
+touch posts.json
+```
+
+Add this content:
+
+```json
+[
+  {
+    "post_title": "Lorem Ipsum",
+    "author": "Author Name",
+    "post_category": [
+      {
+        "value": "React",
+        "label": "React"
+      }
+    ],
+    "created_at": "2020-05-23T18:54:07.157Z",
+    "post_desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+  }
+]
+```
