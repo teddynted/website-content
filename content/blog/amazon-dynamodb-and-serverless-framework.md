@@ -111,8 +111,6 @@ provider:
 
 The above `environment` variables are made available to our code under `process.env`.
 
-> _Upon running `sls offline start` `posts` table will be seeded/populated with predefined json data. Add a directory called `seeds` and a `posts.json` file:_
-
 ```bash
 mkdir seeds && cd seeds
 touch posts.json
@@ -136,3 +134,5 @@ Add this content to `posts.json`:
     }
 ]
 ```
+
+> _Upon running `sls offline start` `posts` table will be seeded/populated with predefined json data. Add a directory called `seeds` and a `posts.json` file:_
