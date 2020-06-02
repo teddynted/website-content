@@ -39,6 +39,32 @@ sls dynamodb install
 
 Let's configure `DynamoDb` and add a table called `posts-dev` in `serverless.yml`:
 
+### Create the Resource
+
+Add the following to `serverless.yml`, we are basically describing our posts table and defining postId attribute as our primary key. we get `TableName` value from the custom variable `${self:custom.postsTableName}` in the next section.
+
+BillingMode `PAY_PER_REQUEST` tells DynamoDB that we want to pay per request and use the On-Demand Capacity option.
+
+```yaml
+resources:
+  Resources:
+    PostsDynamoDBTable:
+      Type: 'AWS::DynamoDB::Table'
+      Properties:
+        AttributeDefinitions:
+          -
+            AttributeName: postId
+            AttributeType: S
+        KeySchema:
+          -
+            AttributeName: postId
+            KeyType: HASH
+        BillingMode: PAY_PER_REQUEST
+        TableName: ${self:custom.postsTableName}
+```
+
+Add the following custom: block to our `serverless.yml`, here we are defining a custom variable `postsTableName` that is used the above snippet and we also adding a basic configuration to our dynamodb.
+
 > _table name should match your enviroment e.g `posts-dev`, `posts-uat` etc._
 
 ```yaml
@@ -61,7 +87,31 @@ custom:
               sources: [seeds/posts.json]
 ```
 
-Upon running `sls offline start` a table will be seeded with predefined json data. Add a directory called `seeds` and a `posts.json` file:
+Add the `iamRoleStatements` property to the provider block in your `serverless.yml`, we are adding permissions to our DynamoDb  table within your account.
+
+```yaml
+provider:
+  name: aws
+  runtime: nodejs12.x
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:Scan
+        - 'lambda:InvokeFunction'
+      Resource:
+        - { "Fn::GetAtt": ["PostsDynamoDBTable", "Arn" ] }
+        - '*'
+        - "arn:aws:dynamodb:${self:provider.region}:*:table/*"
+  environment:
+    POSTS_TABLE: ${self:custom.postsTableName}
+    NODE_ENV: production
+    LAMBDA: true
+    STAGE: ${self:provider.stage}
+```
+
+The above `environment` variables are made available to our code under `process.env`.
+
+> _Upon running `sls offline start` `posts` table will be seeded/populated with predefined json data. Add a directory called `seeds` and a `posts.json` file:_
 
 ```bash
 mkdir seeds && cd seeds
