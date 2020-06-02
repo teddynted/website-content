@@ -111,6 +111,10 @@ provider:
 
 The above `environment` variables are made available to our code under `process.env`.
 
+### Seeding DynamoDb
+
+Seeding it's a process of posting sample data into your dynamodb table, I will show you how to seed when deploying to dev environment. Let's do the following to create a sample json data.
+
 ```bash
 mkdir seeds && cd seeds
 touch posts.json
@@ -135,4 +139,4 @@ Add this content to `posts.json`:
 ]
 ```
 
-> _Upon running `sls offline start` `posts` table will be seeded/populated with predefined json data. Add a directory called `seeds` and a `posts.json` file:_
+> _Upon running `sls offline start` `posts` table will be seeded/populated with predefined json data.
