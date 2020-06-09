@@ -134,9 +134,10 @@ Add this content to `posts.json`:
             }
         ],
         "created_at": "2020-05-23T18:54:07.157Z",
-        "post_desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+        "post_desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        "postId": "32f39119-42dd-4423-8601-2a0dae190527"
     }
 ]
 ```
 
-> _Upon running `sls offline start` `posts` table will be seeded/populated with predefined json data.
+> _Upon running `sls offline start` `posts` table will be seeded/populated with predefined json data._
