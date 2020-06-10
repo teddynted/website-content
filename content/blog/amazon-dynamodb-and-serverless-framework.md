@@ -141,3 +141,5 @@ Add this content to `posts.json`:
 ```
 
 > _Upon running `sls offline start` `posts` table will be seeded/populated with predefined json data._
+
+
