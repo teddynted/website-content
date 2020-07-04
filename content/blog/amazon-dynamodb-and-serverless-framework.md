@@ -278,7 +278,7 @@ exports.app = app;
 exports.server = server;
 ```
 
-#### Display data
+##### Display data
 
 In this section we're going to initiate a call in the front-end to get us data from the back-end and display that data using **Apisauce**
 
@@ -323,3 +323,14 @@ class Index extends React.Component {
 
 export default Index
 ```
+
+##### Let's Run It!
+
+Run this command:
+
+```bash
+sls offline start
+```
+
+And Open http://localhost:3000. You should be able to see same result as the screenshot below:
+
