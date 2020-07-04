@@ -255,7 +255,6 @@ const createServer = () => {
                 data: data
             });
         } catch (error) {
-            console.log('error*', error);
             res.status(500).json(error);
         }
     });
