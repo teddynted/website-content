@@ -332,5 +332,7 @@ Run this command:
 sls offline start
 ```
 
-And Open http://localhost:3000. You should be able to see same result as the screenshot below:
+And Open http://localhost:3000. You should be able to see the same result as the screenshot below:
+
+![alt text](https://nextjs-portfolio.s3.amazonaws.com/localhost-3000-data.jpg "Next.JS Data DynamoDb Query")
 
