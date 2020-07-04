@@ -225,7 +225,9 @@ exports.getPosts = () => {
 ```
 ##### Server
 
-Edit your custom server file to add API end-point that will query DynamoDB and send back data.
+In the root directory, edit your custom server file to add API end-point that will query DynamoDB and send back data.
+
+> _server.js_
 
 ```javascript
 const express = require("express");
@@ -274,4 +276,50 @@ if (!LAMBDA) {
 
 exports.app = app;
 exports.server = server;
+```
+
+#### Display data
+
+In this section we're going to initiate a call in the front-end to get us data from the back-end and display that data using **Apisauce**
+
+```bash
+npm i apisauce --save
+```
+
+Add the code below to this file _pages/index.js_:
+
+```javascript
+import React from 'react'
+import { create } from 'apisauce'
+
+const api = create({
+  baseURL: "http://localhost:3000",
+  headers: { 
+      Accept: 'application/json',
+      'Content-Type': 'application/json' 
+  },
+  timeout: 60000
+});
+
+const fetchData = async () => await api.get('/posts')
+  .then(res => ({
+    posts: res.data,
+  }))
+  .catch(() => ({
+      posts: [],
+    }),
+  );
+
+class Index extends React.Component {
+  static async getInitialProps(ctx) {
+    const res = await fetchData();
+    const { posts } = res;
+    return { posts }
+  }
+  render() {
+      return <div>Next stars {JSON.stringify(this.props.posts)}</div>
+  }
+}
+
+export default Index
 ```
