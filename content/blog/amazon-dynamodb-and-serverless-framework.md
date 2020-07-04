@@ -142,4 +142,85 @@ Add this content to `posts.json`:
 
 > _Upon running `sls offline start` `posts` table will be seeded/populated with predefined json data._
 
+### Query Dynamo DB
+
+Let's get data from our dynamodb post table. Create a server directory in root of your project and add two files:
+
+```javascript
+mkdir server && cd server
+touch dynamo.js postsModel.js
+```
+
+#### Model Posts Table
+
+> _postsModel.js_
+
+```javascript
+const POSTS_TABLE = process.env.POSTS_TABLE;
+const IS_OFFLINE = process.env.IS_OFFLINE;
+
+const params = {
+    TableName: POSTS_TABLE
+};
+
+const visible = ["postId", "post_title", "post_body"];
+
+const transform = v => {
+    console.log(v);
+    return Object.keys(v)
+        .filter(v => {
+            return IS_OFFLINE ? true : visible.includes(v);
+        })
+        .reduce((obj, key) => {
+            obj[key] = v[key];
+            return obj;
+        }, {});
+};
+
+module.exports = {
+    params,
+    visible,
+    transform
+};
+```
+
+#### DynamoDb
+
+Set up DynamoDb so that we can perform operations against it.
+
+> _dynamo.js_
+
+```javascript
+const AWS = require("aws-sdk");
+const { IS_OFFLINE } = process.env;
+
+if( IS_OFFLINE ) {
+    AWS.config.update({
+        region: "us-east-1",
+        endpoint: "http://localhost:8000"
+    });
+}
+
+const dynamoDb = new AWS.DynamoDB.DocumentClient();
+const postsModel = require("./postsModel");
+
+exports.getPosts = () => {
+    return new Promise( async (resolve, revoke) => {
+        const params = {
+            TableName: postsModel.params.TableName,
+        }
+        dynamoDb.scan(params, (err, data) => {
+            if (err) {
+                revoke(err.message);
+            } else {
+                if( data.Items ) {
+                    resolve(data.Items);
+                } else {
+                    resolve([]);
+                }
+            }
+        });  
+    });
+};
+```
 
