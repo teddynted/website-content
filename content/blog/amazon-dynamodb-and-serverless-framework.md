@@ -285,7 +285,7 @@ In this section we're going to initiate a call in the front-end to get us data f
 npm i apisauce --save
 ```
 
-Let's also upgrade to the latest next package, since our cloned repo is on 8.0.0:
+Let's also upgrade to the latest next package, since our cloned repo is on version 8.0.0:
 
 ```bash
 npm uninstall next
