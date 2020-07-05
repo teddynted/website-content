@@ -285,6 +285,14 @@ In this section we're going to initiate a call in the front-end to get us data f
 npm i apisauce --save
 ```
 
+Let's also upgrade to the latest next package, since our cloned repo is on 8.0.0:
+
+```bash
+npm uninstall next
+npm install next
+npm install babel-loader
+```
+
 Add the code below to this file _pages/index.js_:
 
 ```javascript
@@ -333,5 +341,8 @@ sls offline start
 
 And open http://localhost:3000 in a browser, You should be able to see the same result as the screenshot below:
 
+
 ![alt text](https://nextjs-portfolio.s3.amazonaws.com/nextjs-dynamodb-apisauce.jpg "Next.JS Data DynamoDb Query")
+
+<p class="markdown-paragraph">Complete code can be found on <a class="markdown-link" href="https://github.com/teddynted/amazon-dynamodb-and-serverless-framework" target="_blank">Github</a>.</p>
 
