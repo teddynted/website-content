@@ -333,5 +333,5 @@ sls offline start
 
 And open http://localhost:3000 in a browser, You should be able to see the same result as the screenshot below:
 
-![alt text](https://nextjs-portfolio.s3.amazonaws.com/nextjs-dynamodb-apisauce-data.jpg "Next.JS Data DynamoDb Query")
+![alt text](https://nextjs-portfolio.s3.amazonaws.com/nextjs-dynamodb-apisauce.jpg "Next.JS Data DynamoDb Query")
 
