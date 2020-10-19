@@ -4,6 +4,13 @@ _Cron Jobs are used for scheduling tasks to run on the server. They're most comm
 
 <p class="markdown-paragraph">The code is more or less the same as the one on this <a class="markdown-link" href="https://github.com/teddynted/SSH-into-EC2-instance-from-AWS-Lambda">repo</a>. We will just make minor changes to cater for a cron job functionality.</p>
 
+```bash
+serverless create --template aws-nodejs --path scheduling-ssh-job-service --name scheduling-ssh-job-using-aws-lambda
+cd scheduling-ssh-job-service
+npm init -y
+npm i json2csv ssh2-sftp-client 
+```
+
 `serverless.yml`:
 
 ```yaml
