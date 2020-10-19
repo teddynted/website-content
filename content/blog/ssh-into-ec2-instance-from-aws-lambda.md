@@ -12,6 +12,7 @@ First, we’ll start by using the Serverless CLI tool to bootstrap our project a
 
 ```bash
 serverless create --template aws-nodejs --path sftp-file-upload-service --name sftp-file-upload
+cd sftp-file-upload-service
 ```
 
 #### Npm Packages
