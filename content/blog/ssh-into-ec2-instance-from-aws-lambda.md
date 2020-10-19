@@ -150,6 +150,6 @@ functions:
 sls deploy -v
 ```
 
-![alt text](https://nextjs-portfolio.s3.amazonaws.com/lambda-deployment.png "Deploy AWS Lambda")
+![alt text](https://nextjs-portfolio.s3.amazonaws.com/SSH-into-EC2-instance-from-AWS-Lambda.png "Deploy AWS Lambda")
 
 #### And that's all!
