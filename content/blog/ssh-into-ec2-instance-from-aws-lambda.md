@@ -149,8 +149,50 @@ functions:
 
 ```bash
 sls deploy -v
-```
+Serverless: Packaging service...
+Serverless: Excluding development dependencies...
+Serverless: Uploading CloudFormation file to S3...
+Serverless: Uploading artifacts...
+Serverless: Uploading service ssh-ec2-instance.zip file to S3 (771.34 KB)...
+Serverless: Validating template...
+Serverless: Updating Stack...
+Serverless: Checking Stack update progress...
+CloudFormation - UPDATE_IN_PROGRESS - AWS::CloudFormation::Stack - ssh-ec2-instance-dev
+CloudFormation - UPDATE_IN_PROGRESS - AWS::Lambda::Function - SftpFileUploadLambdaFunction
+CloudFormation - UPDATE_COMPLETE - AWS::Lambda::Function - SftpFileUploadLambdaFunction
+CloudFormation - CREATE_IN_PROGRESS - AWS::Lambda::Version - SftpFileUploadLambdaVersionU6SoYKaK1yhvv5hSuxhbZeBVYoeJFnx1B9U72Ir2c
+CloudFormation - CREATE_IN_PROGRESS - AWS::Lambda::Version - SftpFileUploadLambdaVersionU6SoYKaK1yhvv5hSuxhbZeBVYoeJFnx1B9U72Ir2c
+CloudFormation - CREATE_COMPLETE - AWS::Lambda::Version - SftpFileUploadLambdaVersionU6SoYKaK1yhvv5hSuxhbZeBVYoeJFnx1B9U72Ir2c
+CloudFormation - CREATE_IN_PROGRESS - AWS::ApiGateway::Deployment - ApiGatewayDeployment1602968242118
+CloudFormation - CREATE_IN_PROGRESS - AWS::ApiGateway::Deployment - ApiGatewayDeployment1602968242118
+CloudFormation - CREATE_COMPLETE - AWS::ApiGateway::Deployment - ApiGatewayDeployment1602968242118
+CloudFormation - UPDATE_COMPLETE_CLEANUP_IN_PROGRESS - AWS::CloudFormation::Stack - ssh-ec2-instance-dev
+CloudFormation - DELETE_IN_PROGRESS - AWS::ApiGateway::Deployment - ApiGatewayDeployment1602967288570
+CloudFormation - DELETE_SKIPPED - AWS::Lambda::Version - SftpFileUploadLambdaVersionMLeKScEo1Lk9ZO0PNitcSJ3R0tOVVaVoR8UawsqbO4
+CloudFormation - DELETE_COMPLETE - AWS::ApiGateway::Deployment - ApiGatewayDeployment1602967288570
+CloudFormation - UPDATE_COMPLETE - AWS::CloudFormation::Stack - ssh-ec2-instance-dev
+Serverless: Stack update finished...
+Service Information
+service: ssh-ec2-instance
+stage: dev
+region: us-east-1
+stack: ssh-ec2-instance-dev
+resources: 11
+api keys:
+  None
+endpoints:
+  GET - https://api-id.execute-api.us-east-1.amazonaws.com/dev/sftpFileUpload
+functions:
+  sftpFileUpload: ssh-ec2-instance-dev-sftpFileUpload
+layers:
+  None
 
-![alt text](https://nextjs-portfolio.s3.amazonaws.com/SSH-into-EC2-instance-from-AWS-Lambda.png "Deploy AWS Lambda")
+Stack Outputs
+SftpFileUploadLambdaFunctionQualifiedArn: arn:aws:lambda:us-east-1:account-id:function:ssh-ec2-instance-dev-sftpFileUpload:20
+ServiceEndpoint: https://api-id.execute-api.us-east-1.amazonaws.com/dev
+ServerlessDeploymentBucketName: ssh-ec2-instance-dev-serverlessdeploymentbucket-okdq1a4n3v56
+
+Serverless: Removing old service artifacts from S3...
+```
 
 #### And that's all!
