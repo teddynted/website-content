@@ -6,4 +6,5 @@
 ```bash
 npm install expo-cli --global
 expo init reactNativeTeduxToolkitExample
+npm install --save react-redux @reduxjs/toolkit
 ```
