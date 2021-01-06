@@ -1,4 +1,4 @@
-In this tutorial we are going to build a famous todo App using React Native with Redux Toolkit
+In this tutorial we are going to build a famous todo App using React Native with Redux Toolkit.
 
 > _The `Redux Toolkit` package is intended to be the standard way to write Redux logic. It was originally created to help address three common concerns about Redux:_
 
