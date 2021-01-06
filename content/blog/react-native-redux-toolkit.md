@@ -119,5 +119,7 @@ Change directories to the root, and add screens and a navigation functionality s
 
 ```bash
 mkdir navigation
-mkdir screens && screens
+mkdir screens && cd screens
+touch AddTodo.js EditTodo.js ViewTodos.js
 ```
+
