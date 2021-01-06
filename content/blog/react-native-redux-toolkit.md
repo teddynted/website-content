@@ -9,6 +9,7 @@ In this tutorial we are going to build a famous todo App using React Native with
 ### Prerequisites
 * Expo CLI
 * IOS or Android Device with Expo Client installed / Xcode / Android Studio - __N.B__ I am using Xcode for this tutorial.
+* Knowledge of React Native
 
 ### Quick Start
 
@@ -45,7 +46,7 @@ mkdir store && cd store
 touch index.js
 ```
 
-#### Redux Store
+#### store/index.js
 
 ```javascript
 import { configureStore } from '@reduxjs/toolkit'
