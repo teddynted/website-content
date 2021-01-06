@@ -30,8 +30,18 @@ We also need to add packages for navigation and redux toolkit:
 ```bash
 yarn add @react-navigation/native @react-navigation/stack react-redux @reduxjs/toolkit
 ```
-And we finally add these dependencies with expo since our project is expo managed:
+And we finally add these dependencies with Expo since our project is Expo managed:
 
 ```bash
 expo install react-native-gesture-handler react-native-reanimated react-native-screens react-native-safe-area-context @react-native-community/masked-view
+```
+
+### Stack Navigator
+
+Let's add screens and a navigation functionality so that we can easily navigate between screens, run these commands in the root directory of your project:
+
+```bash
+mkdir src && cd src
+mkdir navigation
+mkdir screens
 ```
