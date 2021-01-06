@@ -101,6 +101,18 @@ export const addEditDeleteTodo = (todos) => async dispatch => {
 }
 ```
 
+Update `store/index.js` by importing a slice and passing it to `combineReducers`:
+
+```javascript
+...
+import todos from './todos'
+
+const reducer = combineReducers({
+    todos
+})
+...
+```
+
 ### Stack Navigator
 
 Let's add screens and a navigation functionality so that we can easily navigate between screens:
