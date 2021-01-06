@@ -45,7 +45,7 @@ mkdir src && cd src
 mkdir store && cd store
 touch index.js
 ```
-#### Redux Store
+#### Store
 
 Let's configure our store `store/index.js`:
 
@@ -61,6 +61,44 @@ const store = configureStore({
 })
 
 export default store;
+```
+
+#### Slice
+
+Add a slice - `todos` - that will accepts a reducer function - `addEditDeleteTodoSuccess` and an initial state value - `null`. A slice will automatically generates a slice reducer with corresponding action creators and action types:
+
+```bash
+touch todos.js
+```
+
+`store/todos.js`:
+
+```javascript
+import { createSlice } from '@reduxjs/toolkit'
+
+// Slice
+const slice = createSlice({
+    name: 'todos',
+    initialState: {
+        todos: null,
+    },
+    reducers: {
+        addEditDeleteTodoSuccess: (state, action) => {
+            state.todos = action.payload;
+        }
+    },
+});
+export default slice.reducer
+
+// Action
+const { addEditDeleteTodoSuccess } = slice.actions
+export const addEditDeleteTodo = (todos) => async dispatch => {
+    try {
+        dispatch(addEditDeleteTodoSuccess(todos));
+    } catch (e) {
+        return console.error(e.message);
+    }
+}
 ```
 
 ### Stack Navigator
