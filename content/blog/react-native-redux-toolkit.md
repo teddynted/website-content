@@ -36,12 +36,36 @@ And we finally add these dependencies with Expo since our project is Expo manage
 expo install react-native-gesture-handler react-native-reanimated react-native-screens react-native-safe-area-context @react-native-community/masked-view
 ```
 
-### Stack Navigator
-
-Let's add screens and a navigation functionality so that we can easily navigate between screens, run these commands in the root directory of your project:
+### State management with Redux Toolkit
+Let's add a state management functionality by creating redux a store, action and reducer. Run these commands in the root directory of your project:
 
 ```bash
 mkdir src && cd src
+mkdir store && cd store
+touch index.js
+```
+
+#### Redux Store
+
+```javascript
+import { configureStore } from '@reduxjs/toolkit'
+import { combineReducers } from 'redux'
+
+const reducer = combineReducers({
+})
+
+const store = configureStore({
+    reducer,
+})
+
+export default store;
+```
+
+### Stack Navigator
+
+Let's add screens and a navigation functionality so that we can easily navigate between screens:
+
+```bash
 mkdir navigation
 mkdir screens
 ```
