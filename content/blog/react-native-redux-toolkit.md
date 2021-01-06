@@ -115,9 +115,9 @@ const reducer = combineReducers({
 
 ### Stack Navigator
 
-Let's add screens and a navigation functionality so that we can easily navigate between screens:
+Change directories to the root, and add screens and a navigation functionality so that we can easily navigate between screens:
 
 ```bash
 mkdir navigation
-mkdir screens
+mkdir screens && screens
 ```
