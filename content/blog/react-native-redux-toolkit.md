@@ -12,13 +12,13 @@ In this tutorial we are going to build a famous todo App using React Native with
 
 ### Quick Start
 
-Let's start off installing expo-cli if it's not already installed:
+Let's start off by installing an Expo CLI if it's not already installed:
 
 ```bash
 yarn add expo-cli --global
 ```
 
-Initiliaze the project
+Initiliaze the project:
 
 ```bash
 expo init reactNativeReduxToolkitExample
