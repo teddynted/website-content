@@ -12,11 +12,21 @@ In this tutorial we are going to build a famous todo App using React Native with
 
 ### Quick Start
 
-Let's start off installing expo-cli if it's not already installed, we will also add packages for navigation and redux.
+Let's start off installing expo-cli if it's not already installed:
 
 ```bash
 yarn add expo-cli --global
+```
+
+Initiliaze the project
+
+```bash
 expo init reactNativeReduxToolkitExample
+```
+
+We also need to add packages for navigation and redux toolkit.
+
+```bash
 yarn add @react-navigation/native @react-navigation/stack react-redux @reduxjs/toolkit
 expo install react-native-gesture-handler react-native-reanimated react-native-screens react-native-safe-area-context @react-native-community/masked-view
 ```
