@@ -6,5 +6,6 @@
 ```bash
 npm install expo-cli --global
 expo init reactNativeTeduxToolkitExample
-npm install --save react-redux @reduxjs/toolkit
+yarn add @react-navigation/native @react-navigation/stack react-redux @reduxjs/toolkit
+expo install react-native-gesture-handler react-native-reanimated react-native-screens react-native-safe-area-context @react-native-community/masked-view
 ```
