@@ -22,11 +22,16 @@ Initiliaze the project
 
 ```bash
 expo init reactNativeReduxToolkitExample
+cd reactNativeReduxToolkitExample
 ```
 
-We also need to add packages for navigation and redux toolkit.
+We also need to add packages for navigation and redux toolkit:
 
 ```bash
 yarn add @react-navigation/native @react-navigation/stack react-redux @reduxjs/toolkit
+```
+And we finally add these dependencies with expo since our project is expo managed:
+
+```bash
 expo install react-native-gesture-handler react-native-reanimated react-native-screens react-native-safe-area-context @react-native-community/masked-view
 ```
