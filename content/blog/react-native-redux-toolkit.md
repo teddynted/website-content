@@ -46,7 +46,7 @@ mkdir store && cd store
 touch index.js
 ```
 
-#### store/index.js
+`store/index.js`
 
 ```javascript
 import { configureStore } from '@reduxjs/toolkit'
