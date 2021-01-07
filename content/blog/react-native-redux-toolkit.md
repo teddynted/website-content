@@ -231,7 +231,41 @@ const dispatch = useDispatch()
             navigation.navigate('ViewTodos', { item: '' })
         }
     }
-....
+...
+    return (
+         ...
+            {todos && <TouchableOpacity
+                    style={{
+                        backgroundColor: 'white'
+                    }}
+                    onPress={() => navigation.navigate('ViewTodos')}
+                >
+                    <Text style={{
+                        color: '#dc3545',
+                        fontWeight: 'bold'
+                    }}>View Your Todo List</Text>
+                </TouchableOpacity>
+            }
+          ...
+    )
+...
 ```
 
-We will integrate Redux with the screen using `useDispatch` and `useSelector`.
+We will integrate Redux with the screen using `useDispatch` and `useSelector`. And lastly the add the functionality to update the todos against Redux store in `addTodoItem`.
+
+Update `App.js` with the content below:
+
+```javascript
+import React from 'react'
+import { Provider } from 'react-redux'
+import store from './src/store'
+import Navigation from './src/navigation'
+
+export default function App() {
+  return (
+    <Provider store={store}>
+        <Navigation />
+    </Provider>
+  )
+}
+```
