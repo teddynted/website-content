@@ -253,13 +253,13 @@ const dispatch = useDispatch()
 
 We will integrate Redux with the screen using `useDispatch` and `useSelector`. And lastly the add the functionality to update the todos against Redux store in `addTodoItem`.
 
-Your AddTodo screen look like the screenshot below:
+Your AddTodo screen look something like the screenshot below:
 
 <p align="center">
   <img src="https://nextjs-portfolio.s3.amazonaws.com/AddTodo.png?raw=true" alt="Add Todo Screen"/>
 </p>
 
-<span style="display:block;text-align:center">![alt text](https://nextjs-portfolio.s3.amazonaws.com/AddTodo.png "Add Todo Screen")</span>
+<p class="markdown-paragraph">You can find code for the two other screens on this repo <a class="markdown-link" target="_blank" href="https://github.com/teddynted/react-native-redux-toolkit-example">Github</a>.</p>
 
 And lastly we just need to wrap StackNavigator with Provider inside `App.js` with the below content:
 
