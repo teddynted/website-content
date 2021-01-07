@@ -255,6 +255,10 @@ We will integrate Redux with the screen using `useDispatch` and `useSelector`. A
 
 Your AddTodo screen look like the screenshot below:
 
+<p align="center">
+  <img src="https://nextjs-portfolio.s3.amazonaws.com/AddTodo.png?raw=true" alt="Add Todo Screen"/>
+</p>
+
 <span style="display:block;text-align:center">![alt text](https://nextjs-portfolio.s3.amazonaws.com/AddTodo.png "Add Todo Screen")</span>
 
 And lastly we just need to wrap StackNavigator with Provider inside `App.js` with the below content:
