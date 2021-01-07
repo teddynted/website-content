@@ -329,6 +329,12 @@ export default function App() {
 }
 ```
 
+### Run it
+
+```bash
+yarn ios
+```
+
 ### Wa-Lah!
 
 Here it is in action
