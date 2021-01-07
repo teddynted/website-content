@@ -141,6 +141,8 @@ const { width } = Dimensions.get('window')
 
 export default function AddTodo({navigation}) {
     const [value, onChangeText] = useState('')
+    const addTodoItem = value => {
+    }
     return (
         <View style={styles.container}>
             <Text style={styles.text}>React Native Todo App</Text>
@@ -153,7 +155,7 @@ export default function AddTodo({navigation}) {
                 />
                 <TouchableOpacity
                     style={styles.buttonContainer}
-                    onPress={}
+                    onPress={() => addTodoItem(value)}
                 >
                     <AntDesign name="plus" size={24} color="white" />
                 </TouchableOpacity>
@@ -205,3 +207,31 @@ let styles = StyleSheet.create({
     }
 })
 ```
+
+Let's connect Redux to our `AddTodo.js` screen and add the following code: 
+
+```javascript
+...
+import { useDispatch, useSelector } from 'react-redux'
+import { addEditDeleteTodo } from '../store/todos'
+...
+const dispatch = useDispatch()
+    const [value, onChangeText] = useState('')
+    const { todos } = useSelector(state => state.todos)
+    const addTodoItem = value => {
+        if( value ) {
+            let todoEntry;
+            if(!todos) {
+                todoEntry = [{ 'index': todos ? todos.length + 1 : 1, 'isDone': false, 'task': value}];
+            } else {
+                todoEntry = [...todos, { 'index': todos ? todos.length + 1 : 1, 'isDone': false, 'task': value}];
+            }
+            dispatch(addEditDeleteTodo(todoEntry));
+            onChangeText('')
+            navigation.navigate('ViewTodos', { item: '' })
+        }
+    }
+....
+```
+
+We will integrate Redux with the screen using `useDispatch` and `useSelector`.
