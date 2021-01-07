@@ -329,6 +329,10 @@ export default function App() {
 }
 ```
 
+### Wa-Lah!
+
+Here it is in action
+
 <p align="center">
     <img src="https://nextjs-portfolio.s3.amazonaws.com/ReactNativeToDoApp-min.gif" />
 </p>
