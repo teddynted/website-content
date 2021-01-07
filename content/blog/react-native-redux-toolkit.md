@@ -330,5 +330,5 @@ export default function App() {
 ```
 
 <p align="center">
-    ![Alt Text](s3://nextjs-portfolio/ReactNativeToDoApp-min.gif)
+    <img src="s3://nextjs-portfolio/ReactNativeToDoApp-min.gif" />
 </p>
