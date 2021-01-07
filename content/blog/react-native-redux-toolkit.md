@@ -253,6 +253,8 @@ const dispatch = useDispatch()
 
 We will integrate Redux with the screen using `useDispatch` and `useSelector`. And lastly the add the functionality to update the todos against Redux store in `addTodoItem`.
 
+![alt text](https://nextjs-portfolio.s3.amazonaws.com/AddTodo.png "Add Todo Screen")
+
 And lastly we just need to wrap StackNavigator with Provider inside `App.js` with the below content:
 
 ```javascript
