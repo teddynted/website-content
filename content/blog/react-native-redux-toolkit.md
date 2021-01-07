@@ -328,3 +328,7 @@ export default function App() {
   )
 }
 ```
+
+<p align="center">
+  <img src="s3://nextjs-portfolio/ReactNativeToDoApp-min.gif?raw=true" alt="Add Todo Screen"/>
+</p>
