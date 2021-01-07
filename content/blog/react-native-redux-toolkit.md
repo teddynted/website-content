@@ -215,7 +215,8 @@ Let's connect Redux to our `AddTodo.js` screen and add the following code:
 import { useDispatch, useSelector } from 'react-redux'
 import { addEditDeleteTodo } from '../store/todos'
 ...
-const dispatch = useDispatch()
+export default function AddTodo({navigation}) {
+    const dispatch = useDispatch()
     const [value, onChangeText] = useState('')
     const { todos } = useSelector(state => state.todos)
     const addTodoItem = value => {
@@ -260,6 +261,56 @@ Your AddTodo screen look something like the screenshot below:
 </p>
 
 <p class="markdown-paragraph">You can find code for the two other screens on this repo <a class="markdown-link" target="_blank" href="https://github.com/teddynted/react-native-redux-toolkit-example">Github</a>.</p>
+
+Let's ensure that we are able to navigate between screens by adding the navigation in the `src` directory:
+
+```bash
+cd navigation
+touch index.js
+```
+
+`src/navigation/index.js`:
+
+```javascript
+import * as React from 'react'
+import { NavigationContainer } from '@react-navigation/native'
+import { createStackNavigator } from '@react-navigation/stack'
+
+import AddTodo from '../screens/AddTodo'
+import EditTodo from '../screens/EditTodo'
+import ViewTodos from '../screens/ViewTodos'
+
+const Stack = createStackNavigator()
+
+export default function Navigation() {
+    return (
+        <NavigationContainer>
+            <Stack.Navigator
+                initialRouteName='AddTodo'
+                screenOptions={{
+                    gestureEnabled: true,
+                    headerShown: false,
+                }}
+            >
+                <Stack.Screen
+                    name='AddTodo'
+                    component={AddTodo}
+                    options={{ title: 'AddTodo' }}
+                />
+                <Stack.Screen
+                    name='EditTodo'
+                    component={EditTodo}
+                    options={{ title: 'EditTodo' }}
+                />
+                <Stack.Screen
+                    name='ViewTodos'
+                    component={ViewTodos}
+                    options={{ title: 'ViewTodos' }}
+                />
+        </Stack.Navigator>
+    </NavigationContainer>)
+}
+```
 
 And lastly we just need to wrap StackNavigator with Provider inside `App.js` with the below content:
 
