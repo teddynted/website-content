@@ -12,5 +12,12 @@ This tutorial walks you through the steps of setting up a Continuous Integration
 * Expo CLI
 * And of course a basic knowledge of React Native
 
+### Let's get it cracking
 
+Let's begin by install Expo CLI and creating our app, ensure that node is installed on machine since we need it to expo CLI
+
+```bash
+npm install -g expo-cli
+expo init react-native-github-pages
+```
 
