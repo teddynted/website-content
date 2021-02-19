@@ -10,7 +10,7 @@ This tutorial walks you through the steps of setting up a Continuous Integration
 * Expo and Github account
 * Expo installed on either your Andriod or IOS device
 * Expo CLI
-* Android Emulator / IOS Simulator
+* And of course a basic knowledge of React Native
 
 
 
