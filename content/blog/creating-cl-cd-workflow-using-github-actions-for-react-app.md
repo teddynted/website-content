@@ -53,3 +53,13 @@ The next step is to add our Github workflow yaml file in the root directory of o
 ```bash
 mkdir .github && cd .github && mkdir workflows && cd workflows && touch actions.yml
 ```
+
+### Ready For Github Action(s)?
+
+Let's create our workflow, we will give it a name and it will run whenever commits are pushed against your repo:
+
+```yaml
+name: Publish to Dealr App
+
+on: push
+```
