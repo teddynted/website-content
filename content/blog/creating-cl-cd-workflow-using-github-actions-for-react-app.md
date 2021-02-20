@@ -19,5 +19,33 @@ Let's begin by installing Expo CLI and creating our app, ensure that node is ins
 ```bash
 npm install -g expo-cli
 expo init react-native-github-pages
+cd react-native-github-pages
+```
+
+We are not going to do much on the code, just change this wording `Open up App.js to start working on your app` to `Hello World!`, as shown below `App.js`:
+
+```javascript
+import { StatusBar } from 'expo-status-bar';
+import React from 'react';
+import { StyleSheet, Text, View } from 'react-native';
+
+export default function App() {
+  return (
+    <View style={styles.container}>
+      <Text>Hello World!</Text>
+      <StatusBar style="auto" />
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
+
 ```
 
