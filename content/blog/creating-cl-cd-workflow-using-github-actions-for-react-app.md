@@ -14,7 +14,7 @@ This tutorial walks you through the steps of setting up a Continuous Integration
 
 ### Let's get it cracking
 
-Let's begin by install Expo CLI and creating our app, ensure that node is installed on machine since we need it to expo CLI
+Let's begin by installing Expo CLI and creating our app, ensure that node is installed on machine since we need it for expo CLI.
 
 ```bash
 npm install -g expo-cli
