@@ -56,10 +56,21 @@ mkdir .github && cd .github && mkdir workflows && cd workflows && touch actions.
 
 ### Ready For Github Action(s)?
 
-Let's create our workflow, we will give it a name and it will run whenever commits are pushed against your repo:
+Let's create our workflow, we will give it a name and it will run whenever commits are pushed against your repo by adding commands below in `.github/workflows/actions.yml`:
 
 ```yaml
-name: Publish to Dealr App
+name: Publish my first React Native App
 
 on: push
+```
+
+Set the job key, the type of machine it will run on and node version:
+
+```yaml
+jobs:
+  publish-to-teddys-acc:
+    runs-on: macos-latest
+    strategy:
+      matrix:
+        node-version: [14.x]
 ```
