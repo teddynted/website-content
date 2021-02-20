@@ -99,3 +99,5 @@ The steps will do the following:
 * Check out a copy of your repo on the macos-latest machine
 * Automate the process of publishing of your project to Expo by passing your expo account credentials which we will create on your Github repo
 * You also need to install required dependencies
+
+### Github Repo
