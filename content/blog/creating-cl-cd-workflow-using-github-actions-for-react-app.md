@@ -74,3 +74,23 @@ jobs:
       matrix:
         node-version: [14.x]
 ```
+
+Define steps that will be running commands:
+
+```yaml
+   steps:
+      - uses: actions/checkout@v2.3.1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: ${{matrix.node-version}}
+      - uses: expo/expo-github-action@v5
+        with:
+          expo-version: 4.x
+          expo-username: ${{secrets.EXPO_CLI_USERNAME}}
+          expo-password: ${{secrets.EXPO_CLI_PASSWORD}}
+      - name: Install dependencies
+        run: npm install
+      - name: Publish to expo
+        run: expo publish
+```
+
