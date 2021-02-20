@@ -22,7 +22,7 @@ expo init react-native-github-pages
 cd react-native-github-pages
 ```
 
-We are not going to do much on the code, just change this wording `Open up App.js to start working on your app` to `Hello World!`, as shown below `App.js`:
+We are not going to do much on the code, just change this wording `Open up App.js to start working on your app` to `Hello World!`, as shown below in the `App.js` file:
 
 ```javascript
 import { StatusBar } from 'expo-status-bar';
@@ -46,6 +46,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
-
 ```
 
+The next step is to add our Github workflow yaml file in the root directory:
+
+```bash
+mkdir .github && cd .github && mkdir workflows && cd workflows && touch actions.yml
+```
