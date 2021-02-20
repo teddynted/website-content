@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
 });
 ```
 
-The next step is to add our Github workflow yaml file in the root directory:
+The next step is to add our Github workflow yaml file in the root directory of our project:
 
 ```bash
 mkdir .github && cd .github && mkdir workflows && cd workflows && touch actions.yml
