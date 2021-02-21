@@ -100,7 +100,7 @@ The steps will do the following:
 * Automate the process of publishing of your project to Expo by passing your expo account credentials which we will create on your Github repo
 * You also need to install required dependencies
 
-HEre is a complete actions' yaml file:
+Here is a complete actions' yaml file:
 
 ```yaml
 name: Publish my first React Native App
@@ -130,3 +130,7 @@ jobs:
 ```
 
 ### Github Repo
+
+Now let's head over to github to create our repository, you will also need to add your Expo's username and password as secrets under your repo's settings:
+
+
