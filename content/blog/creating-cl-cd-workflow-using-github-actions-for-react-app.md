@@ -129,8 +129,18 @@ jobs:
         run: expo publish
 ```
 
-### Github Repo
+#### Github Repo
 
-Now let's head over to github to create our repository, you will also need to add your Expo's username and password as secrets under your repo's settings:
+Now let's head over to github to create our repository and add origin to your local git repo, you will also need to add your Expo's username and password as secrets under your repo's settings:
+
+`https://github.com/account-name/repo-name/settings/secrets/actions`
+
+<p align="center">
+  <img src="https://nextjs-portfolio.s3.amazonaws.com/github-secrets-under-settings.png?raw=true" alt="Github Secrets Under Settings"/>
+</p>
+
+#### See workflow in action
+
+Add and commit your changes against the master branch. 
 
 
