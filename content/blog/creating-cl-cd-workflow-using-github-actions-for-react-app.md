@@ -150,7 +150,7 @@ Add and commit your changes against the master branch.
 Congratulations, you have published your first React Native App to Expo store.
 
 <p align="center">
-  <img src="https://nextjs-portfolio.s3.amazonaws.com/Publishing-to-expo.gif?raw=true" alt="Complete Actions Job"/>
+  <img src="https://nextjs-portfolio.s3.amazonaws.com/Complete+Job+Run.png?raw=true" alt="Complete Actions Job"/>
 </p>
 
 
