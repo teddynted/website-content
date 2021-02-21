@@ -152,5 +152,3 @@ Congratulations, you have published your first React Native App to Expo store.
 <p align="center">
   <img src="https://nextjs-portfolio.s3.amazonaws.com/Complete+Job+Run.png?raw=true" alt="Complete Actions Job"/>
 </p>
-
-
