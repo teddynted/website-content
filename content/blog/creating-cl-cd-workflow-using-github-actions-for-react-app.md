@@ -100,4 +100,33 @@ The steps will do the following:
 * Automate the process of publishing of your project to Expo by passing your expo account credentials which we will create on your Github repo
 * You also need to install required dependencies
 
+HEre is a complete actions' yaml file:
+
+```yaml
+name: Publish my first React Native App
+
+on: push
+
+jobs:
+  publish-to-teddys-acc:
+    runs-on: macos-latest
+    strategy:
+      matrix:
+        node-version: [14.x]
+    steps:
+      - uses: actions/checkout@v2.3.1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: ${{matrix.node-version}}
+      - uses: expo/expo-github-action@v5
+        with:
+          expo-version: 4.x
+          expo-username: ${{secrets.EXPO_CLI_USERNAME}}
+          expo-password: ${{secrets.EXPO_CLI_PASSWORD}}
+      - name: Install dependencies
+        run: npm install
+      - name: Publish to expo
+        run: expo publish
+```
+
 ### Github Repo
