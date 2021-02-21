@@ -143,4 +143,14 @@ Now let's head over to github to create our repository and add origin to your lo
 
 Add and commit your changes against the master branch. 
 
+<p align="center">
+    <img src="https://nextjs-portfolio.s3.amazonaws.com/Publishing-to-expo.gif" />
+</p>
+
+Congratulations, you have published your first React Native App to Expo store.
+
+<p align="center">
+  <img src="https://nextjs-portfolio.s3.amazonaws.com/Publishing-to-expo.gif?raw=true" alt="Complete Actions Job"/>
+</p>
+
 
