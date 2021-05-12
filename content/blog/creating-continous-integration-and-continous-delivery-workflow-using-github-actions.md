@@ -12,7 +12,7 @@ This tutorial walks you through the steps of setting up a Continuous Integration
 * Expo CLI
 * And of course a basic knowledge of React Native
 
-### Let's get it cracking
+### Let's get cracking
 
 Let's begin by installing Expo CLI and creating our app, ensure that node is installed on machine since we need it for expo CLI.
 
